@@ -16,6 +16,10 @@ const config: Config = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'var(--font-geist-sans)', 'system-ui', 'sans-serif'],
+        heading: ['Space Grotesk', 'var(--font-geist-sans)', 'system-ui', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -49,6 +53,22 @@ const config: Config = {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        // Privacy Guardian Design System Colors
+        guardian: {
+          primary: "#6B46C1",     // Deep purple
+          secondary: "#1E293B",   // Midnight blue
+          accent: "#06B6D4",      // Teal/cyan
+          50: "#F8FAFC",
+          100: "#F1F5F9",
+          200: "#E2E8F0",
+          300: "#CBD5E1",
+          400: "#94A3B8",
+          500: "#64748B",
+          600: "#475569",
+          700: "#334155",
+          800: "#1E293B",
+          900: "#0F172A",
         },
       },
       borderRadius: {

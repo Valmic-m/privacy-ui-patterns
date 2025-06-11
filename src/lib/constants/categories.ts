@@ -1,124 +1,142 @@
-import { LucideIcon, Trash2, Fingerprint, Baby, CheckSquare, Cookie, Database, Download, Clock, Smartphone, AlertTriangle, Zap, Shield, LayoutDashboard, ToggleLeft, FileText, EyeOff } from 'lucide-react';
+// Initial privacy pattern categories to seed the database
+// Based on the Privacy UI Pattern Library documentation
 
-export interface CategoryConfig {
+export interface InitialCategory {
   name: string;
   slug: string;
-  description: string;
-  icon: LucideIcon;
-  color: string;
+  order_index: number;
+  description?: string;
+  icon?: string;
 }
 
-export const CATEGORY_CONFIGS: Record<string, CategoryConfig> = {
-  'account-deletion': {
-    name: 'Account Deletion',
-    slug: 'account-deletion',
-    description: 'Patterns for allowing users to permanently delete their accounts and associated data',
-    icon: Trash2,
-    color: 'destructive'
+export const INITIAL_CATEGORIES: InitialCategory[] = [
+  { 
+    name: "Account Deletion", 
+    slug: "account-deletion", 
+    order_index: 1,
+    description: "Permanent account removal workflows that ensure complete data erasure while maintaining user trust.",
+    icon: "user-x"
   },
-  'biometric-privacy': {
-    name: 'Biometric Privacy',
-    slug: 'biometric-privacy',
-    description: 'Patterns for handling facial recognition, fingerprints, and other biometric data',
-    icon: Fingerprint,
-    color: 'purple'
+  { 
+    name: "Biometric Privacy", 
+    slug: "biometric-privacy", 
+    order_index: 2,
+    description: "Facial recognition, fingerprint, and other biometric data handling interfaces that prioritize consent and security.",
+    icon: "fingerprint"
   },
-  'child-privacy': {
-    name: 'Child Privacy',
-    slug: 'child-privacy',
-    description: 'Patterns specifically designed to protect children\'s privacy and comply with COPPA',
-    icon: Baby,
-    color: 'pink'
+  { 
+    name: "Child Privacy", 
+    slug: "child-privacy", 
+    order_index: 3,
+    description: "COPPA-compliant patterns for minors including parental consent, age verification, and child-safe interfaces.",
+    icon: "baby"
   },
-  'consent-management': {
-    name: 'Consent Management',
-    slug: 'consent-management',
-    description: 'Patterns for obtaining and managing user consent for data processing',
-    icon: CheckSquare,
-    color: 'green'
+  { 
+    name: "Consent Management", 
+    slug: "consent-management", 
+    order_index: 4,
+    description: "User consent collection and management systems that make choices clear and revocable.",
+    icon: "check-circle"
   },
-  'cookie-banners': {
-    name: 'Cookie Banners',
-    slug: 'cookie-banners',
-    description: 'Patterns for cookie consent notices and preference management',
-    icon: Cookie,
-    color: 'amber'
+  { 
+    name: "Cookie Banners", 
+    slug: "cookie-banners", 
+    order_index: 5,
+    description: "GDPR-compliant cookie notices that balance compliance with user experience.",
+    icon: "cookie"
   },
-  'data-access-rights': {
-    name: 'Data Access Rights',
-    slug: 'data-access-rights',
-    description: 'Patterns for allowing users to access their personal data',
-    icon: Database,
-    color: 'blue'
+  { 
+    name: "Data Access Rights", 
+    slug: "data-access-rights", 
+    order_index: 6,
+    description: "User data access interfaces that enable individuals to view, download, and understand their personal data.",
+    icon: "database"
   },
-  'data-export': {
-    name: 'Data Export',
-    slug: 'data-export',
-    description: 'Patterns for enabling users to download their data in portable formats',
-    icon: Download,
-    color: 'teal'
+  { 
+    name: "Data Export", 
+    slug: "data-export", 
+    order_index: 7,
+    description: "Data portability patterns that allow users to easily export their information to other services.",
+    icon: "download"
   },
-  'data-retention': {
-    name: 'Data Retention',
-    slug: 'data-retention',
-    description: 'Patterns for managing how long user data is stored',
-    icon: Clock,
-    color: 'orange'
+  { 
+    name: "Data Retention", 
+    slug: "data-retention", 
+    order_index: 8,
+    description: "Data lifecycle management interfaces that clearly communicate retention periods and deletion processes.",
+    icon: "calendar-clock"
   },
-  'device-permissions': {
-    name: 'Device Permissions',
-    slug: 'device-permissions',
-    description: 'Patterns for requesting camera, microphone, location, and other device permissions',
-    icon: Smartphone,
-    color: 'indigo'
+  { 
+    name: "Device Permissions", 
+    slug: "device-permissions", 
+    order_index: 9,
+    description: "Camera, microphone, location and other device permission interfaces that explain purpose and enable granular control.",
+    icon: "smartphone"
   },
-  'incident-notifications': {
-    name: 'Incident Notifications',
-    slug: 'incident-notifications',
-    description: 'Patterns for notifying users about data breaches and security incidents',
-    icon: AlertTriangle,
-    color: 'red'
+  { 
+    name: "Incident Notifications", 
+    slug: "incident-notifications", 
+    order_index: 10,
+    description: "Data breach notification patterns that communicate incidents clearly while maintaining user trust.",
+    icon: "alert-triangle"
   },
-  'just-in-time-consent': {
-    name: 'Just-in-Time Consent',
-    slug: 'just-in-time-consent',
-    description: 'Patterns for requesting permission at the moment of need',
-    icon: Zap,
-    color: 'yellow'
+  { 
+    name: "Just-in-Time Consent", 
+    slug: "just-in-time-consent", 
+    order_index: 11,
+    description: "Contextual permission requests that appear exactly when data collection occurs with clear explanations.",
+    icon: "clock"
   },
-  'permission-requests': {
-    name: 'Permission Requests',
-    slug: 'permission-requests',
-    description: 'Patterns for clearly explaining why permissions are needed',
-    icon: Shield,
-    color: 'cyan'
+  { 
+    name: "Permission Requests", 
+    slug: "permission-requests", 
+    order_index: 12,
+    description: "Clear permission explanations that help users understand what they're granting access to and why.",
+    icon: "key"
   },
-  'privacy-dashboards': {
-    name: 'Privacy Dashboards',
-    slug: 'privacy-dashboards',
-    description: 'Patterns for centralized privacy control interfaces',
-    icon: LayoutDashboard,
-    color: 'violet'
+  { 
+    name: "Privacy Dashboards", 
+    slug: "privacy-dashboards", 
+    order_index: 13,
+    description: "Centralized privacy control centers that give users visibility and control over their data and privacy settings.",
+    icon: "dashboard"
   },
-  'privacy-defaults': {
-    name: 'Privacy Defaults',
-    slug: 'privacy-defaults',
-    description: 'Patterns for privacy-protective default settings',
-    icon: ToggleLeft,
-    color: 'emerald'
+  { 
+    name: "Privacy Defaults", 
+    slug: "privacy-defaults", 
+    order_index: 14,
+    description: "Privacy-protective default settings that maximize user privacy without requiring action.",
+    icon: "shield"
   },
-  'privacy-notices': {
-    name: 'Privacy Notices',
-    slug: 'privacy-notices',
-    description: 'Patterns for presenting privacy policies and notices',
-    icon: FileText,
-    color: 'slate'
+  { 
+    name: "Privacy Notices", 
+    slug: "privacy-notices", 
+    order_index: 15,
+    description: "Policy presentation patterns that make privacy information digestible and actionable for users.",
+    icon: "file-text"
   },
-  'third-party-tracking': {
-    name: 'Third-Party Tracking',
-    slug: 'third-party-tracking',
-    description: 'Patterns for managing third-party trackers and advertising',
-    icon: EyeOff,
-    color: 'gray'
+  { 
+    name: "Third-Party Tracking", 
+    slug: "third-party-tracking", 
+    order_index: 16,
+    description: "Ad and tracker management interfaces that give users control over third-party data collection.",
+    icon: "eye-off"
   }
-};
+];
+
+// Helper functions for working with categories
+export function getCategoryBySlug(slug: string): InitialCategory | undefined {
+  return INITIAL_CATEGORIES.find(category => category.slug === slug);
+}
+
+export function getCategoryByName(name: string): InitialCategory | undefined {
+  return INITIAL_CATEGORIES.find(category => category.name === name);
+}
+
+export function getCategoriesSorted(): InitialCategory[] {
+  return INITIAL_CATEGORIES.sort((a, b) => a.order_index - b.order_index);
+}
+
+export function getCategoriesAlphabetical(): InitialCategory[] {
+  return INITIAL_CATEGORIES.sort((a, b) => a.name.localeCompare(b.name));
+}
