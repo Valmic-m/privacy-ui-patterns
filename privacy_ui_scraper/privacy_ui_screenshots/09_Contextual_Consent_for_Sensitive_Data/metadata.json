@@ -1,0 +1,82 @@
+{
+  "pattern_number": 9,
+  "pattern_name": "Contextual Consent for Sensitive Data",
+  "folder": "09_Contextual_Consent_for_Sensitive_Data",
+  "examples": [
+    {
+      "example_number": 1,
+      "company": "Apple",
+      "url": "https://support.apple.com/en-us/HT212593",
+      "title": "In‑app\n  card appears only when user taps Sharing ▸ Add Doctor;\n  explains what data types (labs, vitals) will be shared and enables granular\n  toggles.",
+      "use_case": "Health‑record\n  sharing between patients and healthcare providers.",
+      "description": "",
+      "why_selected": "Demonstrates\n  explicit, context‑triggered consent for highly sensitive health data\n  (GDPR Art. 9).",
+      "pbd_alignment": "Proactive, Privacy\n  as default, Respect for user privacy",
+      "nielsen_heuristics": "User control\n  & freedom; Match between system & real world",
+      "screenshot_file": "example_1_Apple.png",
+      "timestamp": "2025-06-05T10:43:51.385366",
+      "success": true,
+      "error": null
+    },
+    {
+      "example_number": 2,
+      "company": "Rate Beta",
+      "url": "https://blog.google/products/google-fit/heart-rate-breathing/",
+      "title": "Overlay\n  appears when user first starts camera‑based measurement:\n  explains sensitive biometrics, light/heart‑rate analysis, local processing.\n  “Got it / Allow Camera” options.",
+      "use_case": "Fitness\n  apps capturing physiological signals via camera.",
+      "description": "",
+      "why_selected": "Shows sensor‑specific,\n  just‑in‑time consent with privacy explanation for raw bio‑signals.",
+      "pbd_alignment": "Proactive, Transparency",
+      "nielsen_heuristics": "Error\n  prevention; Aesthetic & minimalist design",
+      "screenshot_file": "example_2_Rate_Beta.png",
+      "timestamp": "2025-06-05T10:45:11.541048",
+      "success": true,
+      "error": null
+    },
+    {
+      "example_number": 3,
+      "company": "WhatsApp -\n  Live Location Sharing",
+      "url": "https://faq.whatsapp.com/iphone/features/how-to-share-your-live-location",
+      "title": "Modal\n  sheet appears when user taps Attach ▸ Location:\n  duration slider (15 min/1 hr/8 hr) + encryption notice. Can stop sharing\n  anytime.",
+      "use_case": "Messaging\n  apps sharing continuous GPS.",
+      "description": "",
+      "why_selected": "Exemplifies\n  time‑bounded, revocable consent for continuous sensitive location.",
+      "pbd_alignment": "Visibility, Positive‑sum",
+      "nielsen_heuristics": "Flexibility\n  & efficiency; Visibility of system status",
+      "screenshot_file": "example_3_WhatsApp_-\n__Live_Location_Sharing.png",
+      "timestamp": "2025-06-05T10:46:31.914319",
+      "success": true,
+      "error": null
+    },
+    {
+      "example_number": 4,
+      "company": "Microsoft\n  Entra Verified ID - Credential Sharing Prompt",
+      "url": "https://learn.microsoft.com/en-us/entra/verified-id/",
+      "title": "When\n  scanning a QR code, user sees a credential‑preview card listing each claim\n  (legal name, DOB) and tap Share to send only selected claims.",
+      "use_case": "Digital\n  identity wallets exchanging verifiable credentials.",
+      "description": "",
+      "why_selected": "Fine‑grained\n  consent for sensitive identity data supports data minimization.",
+      "pbd_alignment": "End‑to‑End\n  security, Privacy embedded",
+      "nielsen_heuristics": "Recognition\n  rather than recall; Consistency & standards",
+      "screenshot_file": "example_4_Microsoft\n__Entra_Verified ID_-_Credential_Sharing_Prompt.png",
+      "timestamp": "2025-06-05T10:46:37.633358",
+      "success": true,
+      "error": null
+    },
+    {
+      "example_number": 5,
+      "company": "LinkedIn",
+      "url": "https://www.linkedin.com/help/linkedin/answer/a1340510",
+      "title": "Voluntary,\n  skip‑able overlay offered when editing profile; explains usage for diversity\n  analytics, not public, can remove anytime.",
+      "use_case": "Collecting\n  race/ethnicity, gender‑identity—sensitive data under EU/US laws.",
+      "description": "",
+      "why_selected": "Provides\n  contextual explanation, voluntariness, and easy withdrawal.",
+      "pbd_alignment": "Respect\n  for user privacy, Visibility & transparency",
+      "nielsen_heuristics": "Help\n  users recognize, diagnose, recover; Minimalist design",
+      "screenshot_file": "example_5_LinkedIn.png",
+      "timestamp": "2025-06-05T10:46:53.505280",
+      "success": true,
+      "error": null
+    }
+  ]
+}

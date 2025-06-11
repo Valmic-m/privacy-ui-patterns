@@ -1,0 +1,52 @@
+{
+  "pattern_number": 7,
+  "pattern_name": "Third‑Party",
+  "folder": "07_Third‑Party",
+  "examples": [
+    {
+      "example_number": 1,
+      "company": "Google Ad\n  Settings - Ad Personalization Toggle",
+      "url": "https://adssettings.google.com/authenticated",
+      "title": "Account‑level\n  dashboard toggle to disable personalized ads across Google services and\n  partner sites; includes feedback on ad topics and data signals.",
+      "use_case": "Users\n  with Google Account seeking transparency and control over interest‑based\n  advertising.",
+      "description": "",
+      "why_selected": "Provides\n  granular review of inferred interests and single‑switch opt‑out, satisfying\n  GDPR Art. 21 (right to object).",
+      "pbd_alignment": "Visibility, Respect\n  for user privacy",
+      "nielsen_heuristics": "User\n  control & freedom; Visibility of system status",
+      "screenshot_file": "example_1_Google_Ad\n__Settings_-_Ad_Personalization_Toggle.png",
+      "timestamp": "2025-06-05T10:34:01.869707",
+      "success": true,
+      "error": null
+    },
+    {
+      "example_number": 2,
+      "company": "Out Tool",
+      "url": "https://optout.networkadvertising.org/",
+      "title": "Web\n  interface scans participating third‑party cookies and lets users\n  bulk‑opt‑out via cookie writes; shows per‑company\n  status.",
+      "use_case": "US\n  publishers relying on multiple ad networks; CCPA Do‑Not‑Sell compliance.",
+      "description": "",
+      "why_selected": "Illustrates\n  industry self‑regulatory mechanism with bulk action and status feedback.",
+      "pbd_alignment": "Full\n  functionality, Transparency",
+      "nielsen_heuristics": "Recognition\n  rather than recall; Flexibility & efficiency",
+      "screenshot_file": "example_2_Out_Tool.png",
+      "timestamp": "2025-06-05T10:35:22.174481",
+      "success": true,
+      "error": null
+    },
+    {
+      "example_number": 3,
+      "company": "Out",
+      "url": "https://www.youronlinechoices.eu/",
+      "title": "Interactive\n  list of 120+ vendors with “On/Off” switches; stores consent in euconsent cookie; multi‑lingual.",
+      "use_case": "",
+      "description": "",
+      "why_selected": "",
+      "pbd_alignment": "",
+      "nielsen_heuristics": "",
+      "screenshot_file": "example_3_Out.png",
+      "timestamp": "2025-06-05T10:36:42.933350",
+      "success": true,
+      "error": null
+    }
+  ]
+}

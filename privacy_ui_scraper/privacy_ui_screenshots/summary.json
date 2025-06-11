@@ -1,0 +1,145 @@
+{
+  "generated_at": "2025-06-05T10:17:36.144748",
+  "total_patterns": 17,
+  "total_examples": 121,
+  "successful_captures": 118,
+  "failed_captures": 3,
+  "patterns": [
+    {
+      "pattern_number": 1,
+      "pattern_name": "Cookie Consent Banners",
+      "folder": "01_Cookie Consent Banners",
+      "total_examples": 10,
+      "successful": 10,
+      "failed": 0
+    },
+    {
+      "pattern_number": 3,
+      "pattern_name": "Just‑in‑Time",
+      "folder": "03_Just‑in‑Time",
+      "total_examples": 5,
+      "successful": 5,
+      "failed": 0
+    },
+    {
+      "pattern_number": 4,
+      "pattern_name": "Permission Requests (Camera / Microphone / Location)",
+      "folder": "04_Permission_Requests_(Camera___Microphone___Location)",
+      "total_examples": 10,
+      "successful": 10,
+      "failed": 0
+    },
+    {
+      "pattern_number": 6,
+      "pattern_name": "Privacy‑Settings",
+      "folder": "06_Privacy‑Settings",
+      "total_examples": 3,
+      "successful": 2,
+      "failed": 1
+    },
+    {
+      "pattern_number": 7,
+      "pattern_name": "Third‑Party",
+      "folder": "07_Third‑Party",
+      "total_examples": 3,
+      "successful": 3,
+      "failed": 0
+    },
+    {
+      "pattern_number": 7,
+      "pattern_name": "REDO: Third‑Party",
+      "folder": "07_REDO:_Third‑Party",
+      "total_examples": 2,
+      "successful": 2,
+      "failed": 0
+    },
+    {
+      "pattern_number": 8,
+      "pattern_name": "Device-Permission Flows (iOS / Android)",
+      "folder": "08_Device-Permission_Flows_(iOS___Android)",
+      "total_examples": 4,
+      "successful": 4,
+      "failed": 0
+    },
+    {
+      "pattern_number": 9,
+      "pattern_name": "Contextual Consent for Sensitive Data",
+      "folder": "09_Contextual_Consent_for_Sensitive_Data",
+      "total_examples": 5,
+      "successful": 5,
+      "failed": 0
+    },
+    {
+      "pattern_number": 10,
+      "pattern_name": "Child‑Privacy",
+      "folder": "10_Child‑Privacy",
+      "total_examples": 14,
+      "successful": 14,
+      "failed": 0
+    },
+    {
+      "pattern_number": 13,
+      "pattern_name": "Privacy‑First",
+      "folder": "13_Privacy‑First",
+      "total_examples": 5,
+      "successful": 5,
+      "failed": 0
+    },
+    {
+      "pattern_number": 14,
+      "pattern_name": "Data‑Access",
+      "folder": "14_Data‑Access",
+      "total_examples": 17,
+      "successful": 16,
+      "failed": 1
+    },
+    {
+      "pattern_number": 22,
+      "pattern_name": "Incident & Breach Notifications",
+      "folder": "22_Incident_&_Breach_Notifications",
+      "total_examples": 6,
+      "successful": 5,
+      "failed": 1
+    },
+    {
+      "pattern_number": 23,
+      "pattern_name": "Biometric Privacy Controls",
+      "folder": "23_Biometric_Privacy_Controls",
+      "total_examples": 17,
+      "successful": 17,
+      "failed": 0
+    },
+    {
+      "pattern_number": 26,
+      "pattern_name": "Data‑Retention",
+      "folder": "26_Data‑Retention",
+      "total_examples": 5,
+      "successful": 5,
+      "failed": 0
+    },
+    {
+      "pattern_number": 27,
+      "pattern_name": "Data‑Retention",
+      "folder": "27_Data‑Retention",
+      "total_examples": 5,
+      "successful": 5,
+      "failed": 0
+    },
+    {
+      "pattern_number": 28,
+      "pattern_name": "Data‑Retention",
+      "folder": "28_Data‑Retention",
+      "total_examples": 5,
+      "successful": 5,
+      "failed": 0
+    },
+    {
+      "pattern_number": 29,
+      "pattern_name": "Data‑Retention",
+      "folder": "29_Data‑Retention",
+      "total_examples": 5,
+      "successful": 5,
+      "failed": 0
+    }
+  ]
+}
