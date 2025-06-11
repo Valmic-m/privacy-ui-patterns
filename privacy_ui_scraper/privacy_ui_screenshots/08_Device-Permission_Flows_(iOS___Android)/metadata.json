@@ -1,0 +1,67 @@
+{
+  "pattern_number": 8,
+  "pattern_name": "Device-Permission Flows (iOS / Android)",
+  "folder": "08_Device-Permission_Flows_(iOS___Android)",
+  "examples": [
+    {
+      "example_number": 1,
+      "company": "Run Permission Sequence",
+      "url": "https://developer.apple.com/design/human-interface-guidelines/foundations/privacy",
+      "title": "Apple’s\n  HIG prescribes a two‑part sequence: optional in‑app rationale, then system\n  permission sheet with choices (Once / While Using / Never).",
+      "use_case": "Any iOS\n  app requesting sensors or personal data.",
+      "description": "",
+      "why_selected": "Canonical,\n  OS‑enforced pattern that prevents manipulation and supports developer‑provided\n  purpose strings.",
+      "pbd_alignment": "Proactive, Privacy\n  as default, Respect for user privacy",
+      "nielsen_heuristics": "User\n  control & freedom; Visibility of system status",
+      "screenshot_file": "example_1_Run_Permission_Sequence.png",
+      "timestamp": "2025-06-05T10:40:40.403628",
+      "success": true,
+      "error": null
+    },
+    {
+      "example_number": 2,
+      "company": "Reset",
+      "url": "https://developer.android.com/about/versions/14/permissions",
+      "title": "Dialog\n  requests at first use, snackbar confirmation, and\n  auto‑reset after 3 months unused; reviewable via Settings ▸ Privacy ▸ Permission manager.",
+      "use_case": "Android\n  apps needing location, camera, SMS, etc.",
+      "description": "",
+      "why_selected": "Shows\n  life‑cycle approach—grant, monitor, auto‑revoke—aligning with data\n  minimization.",
+      "pbd_alignment": "Proactive, End‑to‑End\n  security",
+      "nielsen_heuristics": "Error\n  prevention; Consistency & standards",
+      "screenshot_file": "example_2_Reset.png",
+      "timestamp": "2025-06-05T10:40:47.187918",
+      "success": true,
+      "error": null
+    },
+    {
+      "example_number": 5,
+      "company": "Samsung\n  One UI - Permission Manager Quick Tiles",
+      "url": "https://www.samsung.com/us/support/answer/ANS00088639/",
+      "title": "Quick‑panel\n  tiles to toggle camera/mic; green status‑bar indicators.",
+      "use_case": "Manufacturer\n  overlay offers layered controls.",
+      "description": "",
+      "why_selected": "Demonstrates\n  OEM‑level privacy enhancements beyond stock Android.",
+      "pbd_alignment": "Privacy\n  as default, Proactive",
+      "nielsen_heuristics": "Visibility\n  of system status; Consistency & standards",
+      "screenshot_file": "example_5_Samsung\n__One UI_-_Permission_Manager_Quick Tiles.png",
+      "timestamp": "2025-06-05T10:42:08.658426",
+      "success": true,
+      "error": null
+    },
+    {
+      "example_number": 6,
+      "company": "Link Permissions",
+      "url": "https://support.google.com/googleplay/android-developer/answer/10787469",
+      "title": "Store\n  listing shows declared data access before install; deep link to explanations.",
+      "use_case": "Pre‑install\n  transparency.",
+      "description": "",
+      "why_selected": "Shifts\n  consent earlier in journey, aligning with informed choice ideals.",
+      "pbd_alignment": "Proactive, Transparency",
+      "nielsen_heuristics": "Match\n  between system & real world; Error prevention",
+      "screenshot_file": "example_6_Link_Permissions.png",
+      "timestamp": "2025-06-05T10:42:33.277662",
+      "success": true,
+      "error": null
+    }
+  ]
+}

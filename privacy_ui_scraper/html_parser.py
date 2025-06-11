@@ -57,43 +57,72 @@ class PrivacyPatternParser:
     
     def _parse_structured_html(self, soup: BeautifulSoup) -> bool:
         """Try to parse HTML with structured elements like tables."""
-        # Look for tables that might contain the privacy patterns
-        tables = soup.find_all('table')
+        # Look for pattern headers in Microsoft Word HTML format
+        pattern_headers = []
         
-        if not tables:
+        # Find all paragraphs that might be pattern headers
+        for p in soup.find_all('p'):
+            text = p.get_text().strip()
+            # Look for pattern headers like "1. Cookie Consent Banners"
+            if re.match(r'\d+\.\s+[A-Z][^\n]{10,}', text) and 'Pattern' not in text:
+                pattern_headers.append((p, text))
+        
+        if not pattern_headers:
             return False
         
-        pattern_number = 0
-        current_pattern = None
-        
-        # Look for pattern headers and tables
-        for element in soup.find_all(['h1', 'h2', 'h3', 'p', 'table']):
-            if element.name in ['h1', 'h2', 'h3', 'p']:
-                # Check if this is a pattern header
-                text = element.get_text().strip()
-                match = re.match(r'(\d+)\.\s+(.+)', text)
-                if match:
-                    # Save previous pattern if exists
-                    if current_pattern and current_pattern.examples:
-                        self.patterns.append(current_pattern)
-                    
-                    pattern_number = int(match.group(1))
-                    pattern_name = match.group(2).strip()
-                    current_pattern = PrivacyPattern(
-                        pattern_number=pattern_number,
-                        pattern_name=pattern_name,
-                        description="",
-                        examples=[]
-                    )
+        # Process each pattern
+        for i, (header_elem, header_text) in enumerate(pattern_headers):
+            # Extract pattern number and name
+            match = re.match(r'(\d+)\.\s+(.+)', header_text)
+            if not match:
+                continue
+                
+            pattern_number = int(match.group(1))
+            pattern_name = match.group(2).strip()
             
-            elif element.name == 'table' and current_pattern:
-                # Parse examples from table
-                examples = self._parse_table_examples(element)
-                current_pattern.examples.extend(examples)
-        
-        # Save last pattern
-        if current_pattern and current_pattern.examples:
-            self.patterns.append(current_pattern)
+            # Find the next elements after this header until next pattern or end
+            current_elem = header_elem.next_sibling
+            tables_found = []
+            
+            # Look for tables following this header
+            next_pattern_pos = None
+            if i + 1 < len(pattern_headers):
+                next_pattern_elem = pattern_headers[i + 1][0]
+                # Find position of next pattern in document
+                all_elements = list(soup.find_all(['p', 'table']))
+                try:
+                    next_pattern_pos = all_elements.index(next_pattern_elem)
+                except ValueError:
+                    next_pattern_pos = None
+            
+            # Find all tables between current pattern and next pattern
+            all_elements = list(soup.find_all(['p', 'table']))
+            try:
+                current_pos = all_elements.index(header_elem)
+                end_pos = next_pattern_pos if next_pattern_pos else len(all_elements)
+                
+                for j in range(current_pos + 1, end_pos):
+                    if j < len(all_elements) and all_elements[j].name == 'table':
+                        tables_found.append(all_elements[j])
+                        
+            except ValueError:
+                continue
+            
+            # Parse examples from all tables found for this pattern
+            all_examples = []
+            for table in tables_found:
+                examples = self._parse_table_examples(table)
+                all_examples.extend(examples)
+            
+            if all_examples:
+                pattern = PrivacyPattern(
+                    pattern_number=pattern_number,
+                    pattern_name=pattern_name,
+                    description="",
+                    examples=all_examples
+                )
+                self.patterns.append(pattern)
+                logger.info(f"Parsed pattern {pattern_number}: {pattern_name} with {len(all_examples)} examples")
         
         return len(self.patterns) > 0
     
@@ -102,32 +131,65 @@ class PrivacyPatternParser:
         examples = []
         
         rows = table.find_all('tr')
-        for row in rows[1:]:  # Skip header row
+        
+        # Skip header rows - look for rows with actual data
+        data_rows = []
+        for row in rows:
             cells = row.find_all(['td', 'th'])
-            if len(cells) >= 4:
+            if cells:
+                # Check if this looks like a data row (has number and URL)
+                first_cell_text = cells[0].get_text().strip()
+                if len(cells) >= 2 and first_cell_text.isdigit():
+                    data_rows.append(row)
+        
+        for row in data_rows:
+            cells = row.find_all(['td', 'th'])
+            if len(cells) >= 2:
                 try:
-                    # Extract URL from cell text or links
-                    url_cell = cells[1].get_text().strip()
-                    url_match = re.search(r'https?://[^\s]+', url_cell)
+                    # Extract example number
+                    example_num_text = cells[0].get_text().strip()
+                    if not example_num_text.isdigit():
+                        continue
+                    
+                    example_number = int(example_num_text)
+                    
+                    # Extract URL and company from second cell
+                    url_cell_text = cells[1].get_text().strip()
+                    
+                    # Look for URLs in the cell text
+                    url_match = re.search(r'https?://[^\s\n]+', url_cell_text)
                     
                     # Also check for actual links
                     link = cells[1].find('a')
                     url = link.get('href') if link else (url_match.group(0) if url_match else "")
                     
                     if url:
+                        # Extract company name (text before URL)
+                        company_text = url_cell_text.split('http')[0].strip()
+                        company = self._extract_company_name(company_text) if company_text else self._extract_company_from_url(url)
+                        
+                        # Extract description from third cell if available
+                        title = cells[2].get_text().strip() if len(cells) > 2 else ""
+                        
+                        # Extract use case from fourth cell if available
+                        use_case = cells[3].get_text().strip() if len(cells) > 3 else ""
+                        
                         example = PrivacyExample(
-                            example_number=int(cells[0].get_text().strip()),
-                            company=self._extract_company_name(cells[1].get_text()),
+                            example_number=example_number,
+                            company=company,
                             url=url,
-                            title=cells[2].get_text().strip() if len(cells) > 2 else "",
-                            use_case=cells[3].get_text().strip() if len(cells) > 3 else "",
-                            why_selected=cells[4].get_text().strip() if len(cells) > 4 else "",
-                            pbd_alignment=cells[5].get_text().strip() if len(cells) > 5 else "",
-                            nielsen_heuristics=cells[6].get_text().strip() if len(cells) > 6 else ""
+                            title=title[:200] if title else "",  # Limit title length
+                            use_case=use_case[:200] if use_case else "",  # Limit use case length
+                            why_selected=cells[4].get_text().strip()[:200] if len(cells) > 4 else "",
+                            pbd_alignment=cells[5].get_text().strip()[:200] if len(cells) > 5 else "",
+                            nielsen_heuristics=cells[6].get_text().strip()[:200] if len(cells) > 6 else ""
                         )
                         examples.append(example)
+                        logger.debug(f"Parsed example {example_number}: {company} - {url}")
+                        
                 except Exception as e:
                     logger.warning(f"Error parsing table row: {e}")
+                    continue
         
         return examples
     
@@ -234,6 +296,19 @@ class PrivacyPatternParser:
         if company_match:
             return company_match.group(1).strip()
         return text.split()[0] if text else "Unknown"
+    
+    def _extract_company_from_url(self, url: str) -> str:
+        """Extract company name from URL."""
+        try:
+            # Extract domain from URL
+            domain = url.replace('https://', '').replace('http://', '').split('/')[0]
+            # Remove www. prefix
+            domain = domain.replace('www.', '')
+            # Take the main part before .com/.org etc
+            company = domain.split('.')[0]
+            return company.capitalize()
+        except:
+            return "Unknown"
     
     def _extract_description(self, section_text: str) -> str:
         """Extract pattern description from section text."""

@@ -1,0 +1,82 @@
+{
+  "pattern_number": 28,
+  "pattern_name": "Data‑Retention",
+  "folder": "28_Data‑Retention",
+  "examples": [
+    {
+      "example_number": 1,
+      "company": "Delete Controls",
+      "url": "https://myactivity.google.com",
+      "title": "Users\n  choose auto‑delete period (3, 18, 36 months) per data type; status chips show\n  “Auto‑delete ON”.",
+      "use_case": "Search,\n  Location, YouTube history retention.",
+      "description": "",
+      "why_selected": "Industry\n  benchmark for user‑configurable retention schedules with clear UI.",
+      "pbd_alignment": "Proactive, Visibility\n  & transparency",
+      "nielsen_heuristics": "User\n  control & freedom; Recognition rather than recall",
+      "screenshot_file": "example_1_Delete_Controls.png",
+      "timestamp": "2025-06-05T11:45:49.212212",
+      "success": true,
+      "error": null
+    },
+    {
+      "example_number": 2,
+      "company": "Default Disappearing Messages",
+      "url": "https://faq.whatsapp.com/400867173838012",
+      "title": "Global\n  setting sets new chats to delete after 24 h, 7 d, 90 d; banner reminds\n  participants.",
+      "use_case": "Personal\n  messaging minimisation.",
+      "description": "",
+      "why_selected": "Normalises\n  auto‑deletion defaults and informs chat participants.",
+      "pbd_alignment": "Privacy\n  as default, Positive‑sum",
+      "nielsen_heuristics": "Error prevention; Visibility\n  of system status",
+      "screenshot_file": "example_2_Default_Disappearing_Messages.png",
+      "timestamp": "2025-06-05T11:46:14.578262",
+      "success": true,
+      "error": null
+    },
+    {
+      "example_number": 3,
+      "company": "Snapchat",
+      "url": "https://support.snapchat.com/a/delete-chat-messages",
+      "title": "Per‑conversation\n  option; toggle slider in chat settings; info blurb.",
+      "use_case": "Ephemeral\n  social messaging.",
+      "description": "",
+      "why_selected": "Early\n  pioneer of default ephemerality with user override.",
+      "pbd_alignment": "Proactive, Respect\n  for user privacy",
+      "nielsen_heuristics": "Aesthetic\n  & minimalist design; Consistency & standards",
+      "screenshot_file": "example_3_Snapchat.png",
+      "timestamp": "2025-06-05T11:47:35.421036",
+      "success": true,
+      "error": null
+    },
+    {
+      "example_number": 4,
+      "company": "Delete Timer",
+      "url": "https://telegram.org/blog/autodelete",
+      "title": "Clock\n  icon lets users set self‑destruct (1 d, 1 wk,\n  custom); animated countdown bubbles.",
+      "use_case": "Secure\n  chats needing timed deletion.",
+      "description": "",
+      "why_selected": "Fine‑grained\n  custom timers and visual cues.",
+      "pbd_alignment": "End‑to‑End\n  security, Proactive",
+      "nielsen_heuristics": "Match between\n  system & real world; Flexibility & efficiency",
+      "screenshot_file": "example_4_Delete_Timer.png",
+      "timestamp": "2025-06-05T11:48:56.652963",
+      "success": true,
+      "error": null
+    },
+    {
+      "example_number": 6,
+      "company": "Proton",
+      "url": "https://proton.me/support/self-destructing-emails",
+      "title": "Compose\n  window checkbox sets expiration (hours to days); recipient receives expiry\n  banner.",
+      "use_case": "Secure\n  email requiring limited-lifetime content.",
+      "description": "",
+      "why_selected": "Applies\n  retention to recipient side and communicates expiry clearly.",
+      "pbd_alignment": "End‑to‑End\n  security, Visibility",
+      "nielsen_heuristics": "Help\n  users recognize, diagnose, recover; Aesthetic & minimalist design",
+      "screenshot_file": "example_6_Proton.png",
+      "timestamp": "2025-06-05T11:50:17.485646",
+      "success": true,
+      "error": null
+    }
+  ]
+}

@@ -52,25 +52,57 @@ class ScreenshotCapture:
         page = None
         
         try:
-            # Create new context with custom user agent
+            # Create new context with EU settings to trigger GDPR banners
             context = await self.browser.new_context(
                 viewport=VIEWPORT,
                 user_agent=USER_AGENT,
-                locale='en-US',
-                timezone_id='America/New_York'
+                locale='en-GB',  # UK locale for GDPR
+                timezone_id='Europe/London',
+                geolocation={'latitude': 51.5074, 'longitude': -0.1278},  # London coordinates
+                permissions=['geolocation'],
+                extra_http_headers={
+                    'Accept-Language': 'en-GB,en;q=0.9'
+                }
             )
             
             page = await context.new_page()
             
+            # Clear any existing cookies to trigger consent banners
+            await context.clear_cookies()
+            
             # Navigate to URL
             logger.info(f"Navigating to {url} (attempt {attempt}/{MAX_RETRIES})")
-            await page.goto(url, wait_until='networkidle', timeout=TIMEOUT)
+            await page.goto(url, wait_until='domcontentloaded', timeout=TIMEOUT)
             
-            # Wait a bit for dynamic content
-            await page.wait_for_timeout(2000)
+            # Wait for privacy banners to appear
+            await page.wait_for_timeout(3000)
             
-            # Handle common cookie banners
-            await self._handle_cookie_banners(page)
+            # Look for cookie/privacy banners before doing anything else
+            banner_found = await self._wait_for_privacy_banners(page)
+            
+            if not banner_found:
+                # Try refreshing to trigger banners
+                await page.reload(wait_until='domcontentloaded')
+                await page.wait_for_timeout(2000)
+                await self._wait_for_privacy_banners(page)
+            
+            # Check for error pages before taking screenshot
+            page_title = await page.title()
+            page_content = await page.content()
+            
+            # Common error page indicators
+            error_indicators = [
+                "404", "not found", "page not found", "error 404",
+                "oops", "something went wrong", "page doesn't exist",
+                "sign in required", "login required", "access denied"
+            ]
+            
+            is_error_page = any(indicator in page_title.lower() or indicator in page_content.lower()[:1000] 
+                              for indicator in error_indicators)
+            
+            if is_error_page:
+                logger.warning(f"Error page detected for {url}: {page_title}")
+                return False, f"Error page: {page_title}"
             
             # Take screenshot
             screenshot_path = folder_path / filename
@@ -80,7 +112,12 @@ class ScreenshotCapture:
                 timeout=SCREENSHOT_TIMEOUT
             )
             
-            logger.info(f"Successfully captured screenshot: {filename}")
+            # Check screenshot file size (very small files are usually error pages)
+            file_size = screenshot_path.stat().st_size
+            if file_size < 30000:  # Less than 30KB is suspicious
+                logger.warning(f"Very small screenshot ({file_size} bytes) for {url} - possible error page")
+            
+            logger.info(f"Successfully captured screenshot: {filename} ({file_size:,} bytes)")
             return True, "Success"
             
         except Exception as e:
@@ -99,33 +136,46 @@ class ScreenshotCapture:
             if context:
                 await context.close()
     
-    async def _handle_cookie_banners(self, page: Page):
-        """Try to handle common cookie consent banners."""
-        # Common selectors for accept buttons
-        accept_selectors = [
-            'button:has-text("Accept")',
-            'button:has-text("Accept all")',
-            'button:has-text("Accept All")',
-            'button:has-text("I agree")',
-            'button:has-text("Agree")',
-            'button:has-text("OK")',
-            'button:has-text("Got it")',
-            'button[id*="accept"]',
-            'button[class*="accept"]',
-            'a:has-text("Accept")',
-            '[data-testid*="accept"]'
+    async def _wait_for_privacy_banners(self, page: Page) -> bool:
+        """Wait for privacy banners to appear and return True if found."""
+        # Common selectors for privacy banners
+        banner_selectors = [
+            '[id*="cookie"]',
+            '[class*="cookie"]',
+            '[id*="consent"]',
+            '[class*="consent"]',
+            '[id*="privacy"]',
+            '[class*="privacy"]',
+            '[id*="gdpr"]',
+            '[class*="gdpr"]',
+            '[role="dialog"]',
+            '[role="banner"]',
+            '.cookie-banner',
+            '.consent-banner',
+            '.privacy-notice',
+            '#cookie-notice',
+            '#consent-notice',
+            '.cmp-banner',
+            '[data-testid*="cookie"]',
+            '[data-testid*="consent"]'
         ]
         
-        for selector in accept_selectors:
+        for selector in banner_selectors:
             try:
-                element = await page.wait_for_selector(selector, timeout=3000)
-                if element:
-                    await element.click()
-                    await page.wait_for_timeout(1000)
-                    logger.debug(f"Clicked cookie consent with selector: {selector}")
-                    break
+                element = await page.wait_for_selector(selector, timeout=2000)
+                if element and await element.is_visible():
+                    logger.info(f"Found privacy banner with selector: {selector}")
+                    return True
             except:
                 continue
+        
+        return False
+    
+    async def _handle_cookie_banners(self, page: Page):
+        """Try to handle common cookie consent banners (DO NOT CLICK - just detect)."""
+        # Just wait to see if banners appear, but don't click them
+        # We want to capture the banners in screenshots
+        await page.wait_for_timeout(1000)
     
     async def capture_pattern_screenshots(
         self,

@@ -1,6 +1,6 @@
-playwright==1.40.0
-beautifulsoup4==4.12.2
-lxml==4.9.3
-aiofiles==23.2.1
-rich==13.7.0
-html5lib==1.1
+playwright
+beautifulsoup4
+lxml
+aiofiles
+rich
+html5lib

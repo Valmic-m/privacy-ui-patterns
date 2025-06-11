@@ -1,0 +1,52 @@
+{
+  "pattern_number": 6,
+  "pattern_name": "Privacy‑Settings",
+  "folder": "06_Privacy‑Settings",
+  "examples": [
+    {
+      "example_number": 1,
+      "company": "Privacy & Personalization",
+      "url": "https://myaccount.google.com/privacycheckup",
+      "title": "Card‑based\n  wizard surfaces each data stream (Web & App Activity, YouTube\n  History, Ad Personalization) with binary toggles and inline explanations.\n  Progress bar guides the user through four steps",
+      "use_case": "Ecosystems\n  aggregating cross‑product data needing central control over collection &\n  use.",
+      "description": "",
+      "why_selected": "Shows\n  progressive‑disclosure, checklist pattern that scales across products and\n  devices.",
+      "pbd_alignment": "Visibility, Proactive,\n  Full functionality",
+      "nielsen_heuristics": "Recognition\n  rather than recall; Flexibility & efficiency",
+      "screenshot_file": "example_1_Privacy_&_Personalization.png",
+      "timestamp": "2025-06-05T10:29:59.101401",
+      "success": true,
+      "error": null
+    },
+    {
+      "example_number": 2,
+      "company": "Privacy Checkup",
+      "url": "https://www.facebook.com/privacy/checkup",
+      "title": "Overlay\n  wizard with five sequential modules (Posts, Profile, Apps, Ad Preferences,\n  Face Recognition). Visual meter and plain‑language tips.",
+      "use_case": "Social\n  networks with complex, legacy settings spread across menus.",
+      "description": "",
+      "why_selected": "Demonstrates\n  task‑focused segmentation, reducing cognitive load while meeting GDPR Art.\n  25.",
+      "pbd_alignment": "Privacy\n  embedded, Respect for user privacy",
+      "nielsen_heuristics": "Aesthetic\n  & minimalist design; User control & freedom",
+      "screenshot_file": "example_2_Privacy_Checkup.png",
+      "timestamp": "2025-06-05T10:31:19.142202",
+      "success": true,
+      "error": null
+    },
+    {
+      "example_number": 4,
+      "company": "Microsoft\n  Account - Privacy Dashboard",
+      "url": "https://account.microsoft.com/privacy",
+      "title": "Web\n  portal lists telemetry categories (Location, Search, Browsing, Voice) plus\n  delete/export buttons and ad‑settings toggles. Provides visual data‑usage\n  timeline.",
+      "use_case": "Cloud/OS\n  vendor balancing telemetry with user agency.",
+      "description": "",
+      "why_selected": "Combines\n  data‑view, delete, export, and advertising settings in a single authenticated\n  portal.",
+      "pbd_alignment": "Visibility\n  & transparency, Positive‑sum",
+      "nielsen_heuristics": "Visibility\n  of system status; Help users recognize, diagnose, recover",
+      "screenshot_file": null,
+      "timestamp": "2025-06-05T10:32:43.472514",
+      "success": false,
+      "error": "Page.goto: net::ERR_TIMED_OUT at https://account.microsoft.com/privacy\nCall log:\n  - navigating to \"https://account.microsoft.com/privacy\", waiting until \"domcontentloaded\"\n"
+    }
+  ]
+}

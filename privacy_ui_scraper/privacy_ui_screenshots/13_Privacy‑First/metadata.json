@@ -1,0 +1,82 @@
+{
+  "pattern_number": 13,
+  "pattern_name": "Privacy‑First",
+  "folder": "13_Privacy‑First",
+  "examples": [
+    {
+      "example_number": 1,
+      "company": "Apple",
+      "url": "https://support.apple.com/HT210677",
+      "title": "Enabled\n  by default on macOS/iOS; blocks third‑party cookies and fingerprinting\n  scripts.",
+      "use_case": "Everyday\n  web browsing on Apple devices.",
+      "description": "",
+      "why_selected": "Illustrates\n  PbD Principle 2 (privacy as default) at\n  browser level without user action.",
+      "pbd_alignment": "Privacy\n  as default, Proactive",
+      "nielsen_heuristics": "Error\n  prevention; Consistency & standards",
+      "screenshot_file": "example_1_Apple.png",
+      "timestamp": "2025-06-05T11:01:49.224357",
+      "success": true,
+      "error": null
+    },
+    {
+      "example_number": 2,
+      "company": "Firefox",
+      "url": "https://support.mozilla.org/en-US/kb/enhanced-tracking-protection-firefox",
+      "title": "Shipping\n  default blocks social trackers, cross‑site cookies, cryptominers.\n  Strict mode opt‑in available.",
+      "use_case": "Privacy‑oriented\n  browser across platforms.",
+      "description": "",
+      "why_selected": "Shows\n  balanced default protecting users while minimizing breakage.",
+      "pbd_alignment": "Privacy\n  embedded, Visibility",
+      "nielsen_heuristics": "Visibility\n  of system status; Aesthetic & minimalist design",
+      "screenshot_file": "example_2_Firefox.png",
+      "timestamp": "2025-06-05T11:03:10.572304",
+      "success": true,
+      "error": null
+    },
+    {
+      "example_number": 3,
+      "company": "Brave\n  Browser - Shields Up",
+      "url": "https://brave.com/shields/",
+      "title": "Ads &\n  trackers blocked, HTTPS upgrade, fingerprinting protection all ON by default.\n  Toggle in URL‑bar for per‑site override.",
+      "use_case": "Chromium‑based\n  privacy browser.",
+      "description": "",
+      "why_selected": "Demonstrates\n  maximal privacy‑first stance with easy override, positive‑sum design.",
+      "pbd_alignment": "End‑to‑End\n  security, Respect for user privacy",
+      "nielsen_heuristics": "User\n  control & freedom; Flexibility & efficiency",
+      "screenshot_file": "example_3_Brave\n__Browser_-_Shields_Up.png",
+      "timestamp": "2025-06-05T11:03:24.905592",
+      "success": true,
+      "error": null
+    },
+    {
+      "example_number": 4,
+      "company": "OS -\n  Limited Photo Library Picker Default",
+      "url": "https://developer.apple.com/wwdc21/10110",
+      "title": "When an\n  app requests photos, default option presented is “Select Photos…” rather than\n  full library; user must choose to allow all.",
+      "use_case": "Mobile\n  apps accessing camera roll.",
+      "description": "",
+      "why_selected": "Implements\n  data minimisation default, reducing over‑collection.",
+      "pbd_alignment": "Privacy\n  as default, Positive‑sum",
+      "nielsen_heuristics": "Match\n  between system & real world; Error prevention",
+      "screenshot_file": "example_4_OS_-\n__Limited_Photo_Library_Picker_Default.png",
+      "timestamp": "2025-06-05T11:04:45.567357",
+      "success": true,
+      "error": null
+    },
+    {
+      "example_number": 5,
+      "company": "Google",
+      "url": "https://support.google.com/accounts/answer/2662856",
+      "title": "In GDPR\n  region, personalized ads default disabled until user opts‑in via\n  banner/dashboard.",
+      "use_case": "Mobile ad\n  ecosystem compliance.",
+      "description": "",
+      "why_selected": "Example\n  of regional default respecting stricter regulation.",
+      "pbd_alignment": "Proactive, Visibility\n  & transparency",
+      "nielsen_heuristics": "Recognition\n  rather than recall; Consistency & standards",
+      "screenshot_file": "example_5_Google.png",
+      "timestamp": "2025-06-05T11:05:09.829218",
+      "success": true,
+      "error": null
+    }
+  ]
+}

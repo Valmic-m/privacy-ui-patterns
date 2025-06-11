@@ -176,8 +176,7 @@ A comprehensive collection of privacy UI pattern screenshots from real-world web
         
         for pattern in self.summary_data["patterns"]:
             success_rate = (pattern['successful'] / pattern['total_examples'] * 100) if pattern['total_examples'] > 0 else 0
-            readme_content += f"### {pattern['pattern_number']}. [{pattern['pattern_name']}](./{pattern['folder']}/)
-"
+            readme_content += f"### {pattern['pattern_number']}. [{pattern['pattern_name']}](./{pattern['folder']}/)\n"
             readme_content += f"- Examples: {pattern['total_examples']}\n"
             readme_content += f"- Successful: {pattern['successful']}\n"
             readme_content += f"- Failed: {pattern['failed']}\n"
