@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(gh auth:*)",
+      "Bash(git push:*)",
+      "Bash(git remote set-url:*)",
+      "Bash(pip3 install:*)",
+      "Bash(playwright install chromium)",
+      "Bash(python3:*)",
+      "Bash(/Users/michaelavaliquette/.npm/_npx/becf7b9e49303068/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/arm64-darwin/rg -i \"cookie consent|privacy pattern|<h[1-6][^>]*>.*privacy|<h[1-6][^>]*>.*cookie|pattern [0-9]\" \"/Users/michaelavaliquette/Dev Projects/Test-thesis-ui/UI_Libary_2025.html\" -A 2 -B 2)",
+      "Bash(/Users/michaelavaliquette/.npm/_npx/becf7b9e49303068/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/arm64-darwin/rg \"<h[1-6]\" \"/Users/michaelavaliquette/Dev Projects/Test-thesis-ui/UI_Libary_2025.html\" -A 1)",
+      "Bash(/Users/michaelavaliquette/.npm/_npx/becf7b9e49303068/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/arm64-darwin/rg -i \"1\\.|2\\.|3\\.|4\\.|5\\.|6\\.|7\\.|8\\.|9\\.|10\\.\" \"/Users/michaelavaliquette/Dev Projects/Test-thesis-ui/UI_Libary_2025.html\" -A 2)",
+      "Bash(/Users/michaelavaliquette/.npm/_npx/becf7b9e49303068/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/arm64-darwin/rg \"1\\.&nbsp;&nbsp;Cookie&nbsp;Consent&nbsp;Banners\" \"/Users/michaelavaliquette/Dev Projects/Test-thesis-ui/UI_Libary_2025.html\" -A 10 -B 5)",
+      "Bash(/Users/michaelavaliquette/.npm/_npx/becf7b9e49303068/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/arm64-darwin/rg \"[0-9]+\\.&nbsp;&nbsp;[A-Z]\" \"/Users/michaelavaliquette/Dev Projects/Test-thesis-ui/UI_Libary_2025.html\")",
+      "Bash(/Users/michaelavaliquette/.npm/_npx/becf7b9e49303068/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/arm64-darwin/rg \"font-size:18\\.0pt\" \"/Users/michaelavaliquette/Dev Projects/Test-thesis-ui/UI_Libary_2025.html\" -A 2)",
+      "Bash(/Users/michaelavaliquette/.npm/_npx/becf7b9e49303068/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/arm64-darwin/rg \"Table of Contents\" \"/Users/michaelavaliquette/Dev Projects/Test-thesis-ui/UI_Libary_2025.html\" -A 50)",
+      "Bash(/Users/michaelavaliquette/.npm/_npx/becf7b9e49303068/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/arm64-darwin/rg \"Banner Type.*Description\" \"/Users/michaelavaliquette/Dev Projects/Test-thesis-ui/UI_Libary_2025.html\" -A 10 -B 2)",
+      "Bash(/Users/michaelavaliquette/.npm/_npx/becf7b9e49303068/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/arm64-darwin/rg \"EU publisher\" \"/Users/michaelavaliquette/Dev Projects/Test-thesis-ui/UI_Libary_2025.html\" -A 3 -B 3)",
+      "Bash(/Users/michaelavaliquette/.npm/_npx/becf7b9e49303068/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/arm64-darwin/rg \"GDPR.*compliant.*banner\" \"/Users/michaelavaliquette/Dev Projects/Test-thesis-ui/UI_Libary_2025.html\" -A 5 -B 5)",
+      "Bash(/Users/michaelavaliquette/.npm/_npx/becf7b9e49303068/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/arm64-darwin/rg \"GDPR\" \"/Users/michaelavaliquette/Dev Projects/Test-thesis-ui/UI_Libary_2025.html\" -A 2 -B 2)",
+      "Bash(/Users/michaelavaliquette/.npm/_npx/becf7b9e49303068/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/arm64-darwin/rg \"References\" \"/Users/michaelavaliquette/Dev Projects/Test-thesis-ui/UI_Libary_2025.html\" -A 5 -B 2)",
+      "Bash(ls:*)",
+      "Bash(find:*)",
+      "Bash(rm:*)",
+      "Bash(find:*)",
+      "Bash(jobs)",
+      "Bash(git fetch:*)",
+      "Bash(npm install:*)",
+      "Bash(mkdir:*)",
+      "Bash(npm run type-check:*)",
+      "Bash(npm run import:patterns:*)",
+      "Bash(git commit:*)",
+      "Bash(touch:*)",
+      "Bash(gtimeout:*)",
+      "Bash(node:*)"
+    ],
+    "deny": []
+  }
+}
