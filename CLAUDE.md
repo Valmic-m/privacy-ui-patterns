@@ -4,251 +4,219 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-This is a Privacy-UI Pattern Library containing 29 documented privacy UI design patterns for GDPR/CCPA compliance. The repository consists of:
+This is a Privacy-UI Pattern Library - a Next.js web application providing a comprehensive collection of privacy-focused UI patterns for GDPR/CCPA compliance. 
 
-- **Main Pattern Library**: `UI_Libary_2025.html` - Interactive HTML document with pattern catalog
-- **Screenshot Scraper Tool**: `privacy_ui_scraper/` - Python tool for automated collection of privacy UI examples
-- **Documentation**: README, license, and pattern documentation
+### Current Status (2025-01-10)
+- **Stage 1 MVP**: ✅ Complete
+- **Live Features**: Pattern browsing, direct navigation, real-time search, data import
+- **Database**: Supabase with 16 categories, multiple patterns, 149+ real-world examples
+- **Tech Stack**: Next.js 15, TypeScript, React Query, Tailwind CSS, shadcn/ui
+
+The repository consists of:
+- **Web Application**: Next.js app with pattern browsing and search
+- **Screenshot Scraper Tool**: `privacy_ui_scraper/` - Python tool with 149+ captured examples
+- **Database Schema**: PostgreSQL schema with categories, patterns, examples, and templates
+- **Import Scripts**: TypeScript scripts to import pattern data from scraper
 
 ## Key Commands
 
-### Scraper Tool Setup and Usage
+### Development Workflow
 ```bash
-# Install scraper dependencies
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp .env.local.example .env.local  # Then add your Supabase credentials
+
+# Run database migrations (in Supabase SQL editor)
+# Execute files in supabase/migrations/ in order
+
+# Import pattern data
+npm run import:patterns    # Import from scraper data
+npm run seed:test         # OR use test data
+
+# Start development server
+npm run dev              # Visit http://localhost:3000
+
+# Other commands
+npm run build           # Production build
+npm run type-check      # TypeScript checking
+npm run lint           # ESLint
+```
+
+### Scraper Tool (if needed)
+```bash
 cd privacy_ui_scraper
 pip install -r requirements.txt
 playwright install chromium
-
-# Run the main scraper
 python main.py
-
-# Check scraper logs
-tail -f scraper.log
-```
-
-### Development Workflow
-```bash
-# View the main pattern library
-open UI_Libary_2025.html
-
-# Check scraper output
-ls privacy_ui_scraper/privacy_ui_screenshots/
-
-# Add new patterns or examples
-git add -A
-git commit -m "Add new privacy pattern: [pattern name]"
-git push
 ```
 
 ## Architecture
 
-### Core Components
+### Web Application Structure
 
-**HTML Pattern Library (`UI_Libary_2025.html`)**
-- Self-contained interactive document with 29 privacy patterns
-- Includes real-world examples, academic references, and implementation guidelines
-- Organized by pattern categories: Consent & Notice, Data Control, Transparency, Security & Authentication, Communication
+**Frontend (Next.js App Router)**
+```
+src/app/
+├── (public)/           # Public routes group
+│   └── patterns/       # Pattern browsing pages
+│       ├── page.tsx    # Category catalogue (direct links to patterns)
+│       ├── [category]/
+│       │   ├── page.tsx    # Redirects to main pattern
+│       │   └── [pattern]/
+│       │       └── page.tsx # Pattern detail with tabs
+├── api/                # API routes
+│   ├── categories/     # Category endpoints
+│   ├── patterns/       # Pattern endpoints
+│   └── search/         # Search functionality
+```
 
-**Privacy UI Scraper (`privacy_ui_scraper/`)**
-- **Parser Layer** (`html_parser.py`): Extracts pattern metadata and URLs from HTML document using BeautifulSoup
-- **Capture Layer** (`screenshot_capture.py`): Playwright-based browser automation for screenshot capture
-- **Management Layer** (`metadata_manager.py`): Organizes output, generates summaries and documentation
-- **Configuration** (`config.py`): Centralized settings for browser behavior, timeouts, and pattern categories
+**Key Components**
+- **Direct Navigation**: Category cards link directly to pattern pages
+- **Pattern Pages**: Three-tab structure (Explanation, Examples, Templates)
+- **Search**: Real-time search with debouncing in navigation
+- **Loading States**: Skeleton screens maintain layout during data fetching
 
-### Data Flow
-1. `html_parser.py` extracts privacy patterns and example URLs from main HTML document
-2. `screenshot_capture.py` launches Playwright browser, navigates to URLs, handles privacy banners
-3. `metadata_manager.py` organizes screenshots into pattern folders, generates JSON metadata and index files
-4. Output structure: `privacy_ui_screenshots/[Pattern_Name]/example_N_[Company].png`
+**Data Layer**
+- **React Query**: Client-side data fetching with caching
+- **Supabase**: PostgreSQL database with Row Level Security
+- **API Routes**: RESTful endpoints with error handling
 
-### Privacy Pattern Categories
-The scraper expects 29 specific privacy pattern categories defined in `config.py`. When adding new patterns:
-- Update `PATTERN_CATEGORIES` list in `config.py`
-- Ensure HTML document structure matches expected pattern numbering
-- Verify parser can extract new pattern metadata
+### Database Schema
 
-### Browser Configuration
-- **EU Mode Enabled**: Uses EU geolocation to trigger GDPR compliance banners
-- **Privacy Banner Capture**: Intentionally preserves privacy banners instead of dismissing them
-- **Resume Capability**: Skips existing screenshots when re-running scraper
-- **Timeout Handling**: 30s page load, 60s screenshot capture timeouts
+```sql
+-- Core tables with relationships
+pattern_categories (1) → (many) patterns
+patterns (1) → (many) examples
+patterns (1) → (many) templates
+```
 
-## File Relationships
+**Key Design Decisions**
+- Categories are pre-seeded (16 total) and admin-managed
+- Patterns belong to exactly one category
+- Pattern slugs are unique within a category
+- Direct navigation assumes one main pattern per category
+- Examples link to real-world screenshots
 
-- `main.py` orchestrates the entire pipeline: parsing → browser setup → screenshot capture → metadata generation
-- `config.py` contains all configuration constants referenced across other modules
-- HTML document structure must align with parser expectations in `html_parser.py`
-- Screenshot organization in `metadata_manager.py` creates browsable output with index.html
+### Recent Feature: Direct Pattern Navigation (2025-01-10)
 
-## Important Notes
+**Problem**: Users had to click through category → pattern list → pattern detail
+**Solution**: Category cards now link directly to the main pattern
 
-- The main HTML document (`UI_Libary_2025.html`) is the authoritative source of patterns - scraper extracts from this file
-- Browser automation is configured specifically for privacy UI capture (EU region, banner preservation)
-- Output is self-documenting with generated README files and metadata for each pattern category
-- Scraper is designed to be resumable and handle network failures gracefully
+**Implementation**:
+1. Updated `/api/categories` to include `main_pattern_slug`
+2. `CategoryCard` builds direct links: `/patterns/{category}/{pattern}`
+3. Category pages (`/patterns/[category]`) redirect to main pattern
+4. "Back" button returns to pattern catalogue, not category
 
-## Recent Improvements & Learnings (2025-06-05)
+**Benefits**: Fewer clicks, cleaner navigation, maintained URL hierarchy
 
-### Privacy Banner Detection Success
-**Problem Solved**: Initial screenshots weren't capturing privacy banners/consent dialogs.
+## Important Architectural Notes
 
-**Solution Implemented**:
-- **EU Geolocation**: Changed to London coordinates and `en-GB` locale to trigger GDPR banners
-- **Cookie Clearing**: Clear cookies before each visit to ensure fresh consent prompts
-- **Smart Detection**: Added `_wait_for_privacy_banners()` method with comprehensive selectors
-- **Banner Preservation**: Removed auto-dismiss functionality to keep banners visible in screenshots
+### Frontend Architecture
+- **Route Groups**: Using `(public)` for public routes, preparing for `(admin)` in Stage 2
+- **Client Components**: Search and pattern pages use 'use client' for interactivity
+- **Server Components**: API routes use async server components where possible
+- **Loading States**: Every data-fetching page has loading.tsx with skeletons
+- **Error Boundaries**: Graceful error handling throughout
 
-**Results**: Successfully detecting privacy banners across major sites:
-- ✅ ICO UK: `[class*="cookie"]` selector
-- ✅ Guardian: `[role="dialog"]` selector  
-- ✅ Apple Privacy: `[class*="privacy"]` selector
-- ✅ Spotify: `[role="dialog"]` selector
-
-### Final Capture Results (2025-06-05)
-
-**🎉 CAPTURE COMPLETE!**
-- **Total Screenshots**: 149 high-quality privacy UI captures
-- **Success Rate**: 97.5% (118/121 successful)
-- **Failed Captures**: Only 3 (Microsoft auth-required pages)
-- **Patterns Captured**: All 17 patterns successfully documented
-
-**Completed Pattern Categories**:
-1. **Cookie Consent Banners** (10 examples) - BBC, NY Times, Guardian, Lufthansa, ICO
-2. **Just-in-Time Consent** (5 examples) - iOS, Android, Chrome, Instagram, Firefox
-3. **Permission Requests** (10 examples) - Camera, microphone, location dialogs
-4. **Privacy Settings** (3 examples) - Google, Facebook, Microsoft dashboards
-5. **Third-Party Controls** (5 examples) - Ad preferences, opt-out tools
-6. **Device Permission Flows** (4 examples) - iOS/Android system permissions
-7. **Contextual Consent** (5 examples) - Health data, biometrics, location sharing
-8. **Child Privacy** (14 examples) - YouTube Kids, Family Link, parental controls
-9. **Privacy-First Defaults** (5 examples) - Safari ITP, Firefox ETP, Brave Shields
-10. **Data Access Rights** (17 examples) - Takeout, portability, download tools
-11. **Incident & Breach Notifications** (6 examples) - Security alerts, breach notices
-12. **Biometric Privacy Controls** (17 examples) - Face ID, fingerprint, AR/VR privacy
-13. **Data Retention Controls** (20 examples) - Auto-delete, ephemeral messaging
-
-### Key Implementation Improvements
-
-**Error Page Detection**: Added smart detection for 404s and login-required pages:
-- Page title and content checking for error indicators
-- File size validation (screenshots under 30KB flagged)
-- Specific handling for authentication-required pages
-
-**Alternative Sources Documentation**: Created `manual_alternatives.md` guide for:
-- Broken URL replacements with working alternatives
-- Authentication-required page handling strategies
-- Academic and industry sources for privacy UI research
-- Manual collection process for restricted interfaces
-
-### Technical Learnings
-
-**Privacy UI Complexity**: Real-world privacy interfaces are highly contextual:
-- **Geographic**: GDPR banners only appear in EU regions
-- **Temporal**: Consent prompts only show on first visits
-- **Conditional**: Different UIs for different user authentication states
-
-**Browser Automation for Privacy Research**: Key requirements:
-- EU geolocation settings to trigger compliance features
-- Fresh browser state with cleared cookies
-- Realistic user agents and headers
-- Patient waiting for dynamic privacy content loading
-
-**Document Parsing**: Microsoft Word HTML exports require robust parsing:
-- Multiple parsing strategies (structured HTML + text-based fallback)
-- Handling special characters in pattern names and filenames
-- Graceful degradation when document structure varies
+### API Design
+- **RESTful**: Standard REST conventions for all endpoints
+- **Pagination**: Built into pattern listing endpoints
+- **Error Handling**: Consistent error response format
+- **Type Safety**: Full TypeScript types for all API responses
 
 ### Performance Optimizations
-- **Resume Capability**: Skip existing screenshots for efficient re-runs
-- **Background Processing**: Run with `nohup` for long capture sessions
-- **Timeout Management**: 30s page load, 60s screenshot timeouts
-- **Smart Retry Logic**: Up to 3 attempts with delays between requests
+- **React Query**: 5-minute cache for patterns, 10 minutes for categories
+- **Debounced Search**: 300ms debounce on search input
+- **Direct Navigation**: Eliminates unnecessary page loads
+- **Turbopack**: Fast refresh in development
 
-### Output Quality
-**File Sizes Indicate Rich Capture**:
-- Guardian: 5.0 MB (complex privacy interface)
-- NY Times: 4.1 MB (paywall + GDPR banner)
-- BBC: 3.6 MB (media site with consent options)
-- Apple Privacy: 224 KB (clean corporate policy)
-- ICO UK: 673 KB (government privacy standard)
+### Data Import Process
+- Pattern data lives in `privacy_ui_scraper/privacy_ui_screenshots/`
+- Import script maps folder names to category slugs
+- Handles duplicate detection and resume capability
+- Preserves screenshot paths for future asset serving
 
-### Future Enhancements Identified
-1. **Regional Comparison**: GDPR (EU) vs CCPA (US) interface differences
-2. **Mobile Views**: Capture mobile-specific privacy interfaces
-3. **Temporal Analysis**: Track privacy UI evolution over time
-4. **Interactive Documentation**: Video capture of consent flows
-5. **Accessibility Testing**: Screen reader compatibility for privacy interfaces
+## Stage 1 MVP Completion (2025-01-10)
 
-### Success Metrics Achieved
-- ✅ **Privacy Banner Detection**: Working across all major platforms with EU geolocation
-- ✅ **Comprehensive Coverage**: All 17 privacy pattern categories successfully captured
-- ✅ **High-Quality Captures**: 149 full-page screenshots with rich privacy UI detail
-- ✅ **Organized Output**: Structured folders with metadata, READMEs, and browsable index.html
-- ✅ **Reliable Automation**: 97.5% success rate with robust error handling
-- ✅ **Research Value**: Complete visual documentation of real-world privacy implementations
+### What Was Built
+1. **Complete Pattern Browsing System**
+   - Category catalogue at `/patterns`
+   - Direct navigation to pattern details
+   - Three-tab pattern pages (Explanation, Examples, Templates)
+   - Real-time search across patterns and examples
 
-### Output Structure
-```
-privacy_ui_screenshots/
-├── 01_Cookie_Consent_Banners/        # 10 examples
-├── 03_Just‑in‑Time/                  # 5 examples
-├── 04_Permission_Requests/           # 10 examples
-├── 06_Privacy‑Settings/              # 3 examples
-├── 07_Third‑Party/                   # 3 examples
-├── 08_Device-Permission_Flows/       # 4 examples
-├── 09_Contextual_Consent/            # 5 examples
-├── 10_Child‑Privacy/                 # 14 examples
-├── 13_Privacy‑First/                 # 5 examples
-├── 14_Data‑Access/                   # 17 examples
-├── 22_Incident_Breach_Notifications/ # 6 examples
-├── 23_Biometric_Privacy_Controls/    # 17 examples
-├── 26-29_Data‑Retention/             # 20 examples
-├── index.html                        # Browse all screenshots
-├── summary.json                      # Capture statistics
-└── README.md                         # Main documentation
-```
+2. **Comprehensive API Layer**
+   - RESTful endpoints for all data operations
+   - Pagination support for large datasets
+   - Consistent error handling
+   - TypeScript types throughout
 
-### Troubleshooting Guide
+3. **Data Import Pipeline**
+   - Scripts to import from scraper data
+   - Test data seeding for development
+   - Duplicate detection and resume capability
 
-**Common Issues & Solutions**:
-1. **Authentication Required Pages** (Google/Microsoft account pages)
-   - Expected behavior - these require manual login
-   - See `manual_alternatives.md` for collection strategies
+4. **Performance & UX**
+   - React Query for efficient caching
+   - Loading skeletons maintain layout
+   - Responsive design with glassmorphism
+   - Direct navigation reduces clicks
 
-2. **Small File Sizes** (<50KB)
-   - Usually indicates error pages or login screens
-   - Validation script available: `python validate_captures.py`
+### Key Technical Decisions
+- **Next.js 15 App Router**: For modern React patterns and performance
+- **React Query**: For client-side data fetching and caching
+- **Supabase**: For managed PostgreSQL with built-in auth (Stage 2)
+- **shadcn/ui**: For consistent, accessible UI components
+- **Direct Navigation**: Eliminates intermediate category pages
 
-3. **Timeout Errors**
-   - Some sites (NY Times, Microsoft) have complex load processes
-   - Scraper retries 3 times automatically
+### Future Enhancements (Stage 2 & 3)
 
-4. **Missing Privacy Banners**
-   - Ensure EU geolocation is enabled in config
-   - Clear cookies between captures
-   - Some sites only show banners on first visit
+**Stage 2 - Community Features**:
+- User authentication with Supabase Auth
+- Pattern submission workflow
+- Admin dashboard for content moderation
+- Contributor profiles and badges
 
-### Usage Instructions
+**Stage 3 - Design Resources**:
+- Figma template integration
+- Downloadable design assets
+- Implementation code examples
+- Pattern variation showcase
 
-**View Results**:
-```bash
-# Open the generated index file in your browser
-open privacy_ui_screenshots/index.html
+## Troubleshooting Guide
 
-# Check specific pattern folders
-ls privacy_ui_screenshots/01_Cookie_Consent_Banners/
+### Common Development Issues
 
-# View capture statistics
-cat privacy_ui_screenshots/summary.json
-```
+1. **Database Connection Errors**
+   - Verify Supabase project is active
+   - Check `.env.local` has correct credentials
+   - Ensure migrations have been run
 
-**Re-run Specific Patterns**:
-```bash
-# Delete specific screenshots to re-capture
-rm privacy_ui_screenshots/01_Cookie_Consent_Banners/example_1_BBC.png
+2. **No Data Showing**
+   - Run `npm run import:patterns` to import data
+   - Check browser console for API errors
+   - Verify Row Level Security policies
 
-# Run scraper again (will skip existing, capture deleted)
-python main.py
-```
+3. **TypeScript Errors**
+   - Run `npm run type-check` to identify issues
+   - Ensure all dependencies are installed
+   - Check for missing type definitions
 
-This project successfully creates a comprehensive visual reference library of privacy UI patterns from real-world implementations, providing valuable research data for privacy-by-design and usable security studies. The captured screenshots serve as a snapshot of privacy interface design practices as of June 2025, documenting how major technology companies implement GDPR, CCPA, and other privacy regulations in their user interfaces.
+4. **Search Not Working**
+   - Verify search API endpoint is accessible
+   - Check for React Query errors in console
+   - Ensure debounce is not too long (300ms default)
+
+### Development Tips
+
+- Use `npm run dev` with Turbopack for faster refresh
+- Check `SETUP_GUIDE.md` for detailed setup instructions
+- API routes are in `src/app/api/` for debugging
+- React Query DevTools can help debug data fetching
+
+## Summary
+
+This CLAUDE.md documents the Privacy UI Pattern Library web application, which has successfully completed Stage 1 MVP with pattern browsing, direct navigation, and search functionality. The app is built with modern Next.js patterns and is ready for Stage 2 community features.

@@ -2,24 +2,35 @@
 
 An open-source platform providing designers with a curated collection of privacy-focused UI patterns that adhere to Privacy by Design principles and Nielsen's Heuristics.
 
+## 🚀 Project Status
+
+**Stage 1 MVP Complete!** The core pattern browsing experience is now live with:
+- ✅ Direct navigation from categories to patterns
+- ✅ Real-time search functionality
+- ✅ 149+ real-world examples from major platforms
+- ✅ Comprehensive API and data layer
+- ✅ Privacy Guardian design system
+
 ## Overview
 
 This Next.js application serves as a comprehensive resource for privacy-conscious design, featuring:
 
-- 🛡️ **29+ Privacy UI Patterns** - Categorized patterns for GDPR/CCPA compliance
-- 🎨 **Figma Templates** - Downloadable design templates for each pattern
-- 🌍 **Real-World Examples** - Screenshots and case studies from major platforms
+- 🛡️ **16 Privacy Pattern Categories** - Covering GDPR/CCPA compliance needs
+- 🌍 **149+ Real-World Examples** - Screenshots from BBC, Apple, Google, Meta, and more
 - 📚 **Academic Foundation** - Based on Privacy by Design principles and Nielsen's Heuristics
-- 🤝 **Community Contributions** - Submit new patterns and examples with manual review
+- 🔍 **Smart Search** - Real-time search across patterns and examples
+- 🎯 **Direct Navigation** - Streamlined access to pattern information
+- 🎨 **Figma Templates** - Coming in Stage 3
 
 ## Tech Stack
 
-- **Framework**: Next.js 14 (App Router)
+- **Framework**: Next.js 15 (App Router with Turbopack)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS + shadcn/ui
 - **Database**: Supabase (PostgreSQL)
-- **Authentication**: Supabase Auth
-- **Hosting**: Vercel
+- **Data Fetching**: React Query (TanStack Query)
+- **Authentication**: Supabase Auth (Stage 2)
+- **Hosting**: Vercel-ready
 
 ## Getting Started
 
@@ -44,7 +55,8 @@ npm install
 
 3. Set up environment variables:
 ```bash
-cp .env.local.example .env.local
+# Create .env.local file
+touch .env.local
 ```
 
 4. Update `.env.local` with your Supabase credentials:
@@ -52,13 +64,30 @@ cp .env.local.example .env.local
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
+DATABASE_URL=your_database_url  # Optional, for direct DB access
 ```
 
-5. Run the database migrations in Supabase:
-   - Navigate to your Supabase project SQL editor
-   - Run the migrations from `supabase/migrations/` in order
+5. Set up the database:
+```bash
+# Option A: Run migrations in Supabase SQL editor
+# Navigate to your Supabase project SQL editor and run:
+# 1. supabase/migrations/20240610_initial_schema.sql
+# 2. supabase/migrations/20240610_seed_categories.sql
 
-6. Start the development server:
+# Option B: Use Supabase CLI (if installed)
+supabase db push
+```
+
+6. Import pattern data:
+```bash
+# Import real pattern data from the scraper
+npm run import:patterns
+
+# OR use test data for quick setup
+npm run seed:test
+```
+
+7. Start the development server:
 ```bash
 npm run dev
 ```
@@ -87,23 +116,78 @@ Visit `http://localhost:3000` to see the application.
 ## Project Structure
 
 ```
-privacy-ui-library/
+privacy-ui-patterns/
 ├── src/
-│   ├── app/                    # Next.js app directory
-│   ├── components/             # React components
-│   ├── lib/                    # Utilities and configs
-│   └── types/                  # TypeScript definitions
+│   ├── app/
+│   │   ├── (public)/          # Public routes
+│   │   │   └── patterns/      # Pattern browsing pages
+│   │   ├── api/               # API routes
+│   │   └── layout.tsx         # Root layout
+│   ├── components/
+│   │   ├── layout/            # Navigation, Footer, Search
+│   │   ├── patterns/          # Pattern cards and grids
+│   │   └── ui/                # shadcn/ui components
+│   ├── hooks/                 # React Query hooks
+│   ├── lib/                   # Utilities and configs
+│   │   ├── supabase/          # Database clients
+│   │   └── constants/         # Categories, principles
+│   └── types/                 # TypeScript definitions
+├── scripts/
+│   ├── import-patterns.ts     # Import scraper data
+│   └── seed-test-data.ts      # Seed test patterns
 ├── supabase/
-│   └── migrations/             # Database schema
-├── public/                     # Static assets
-└── components.json             # shadcn/ui config
+│   └── migrations/            # Database schema
+├── privacy_ui_scraper/        # Pattern data & screenshots
+└── public/                    # Static assets
+```
+
+## Key Features
+
+### 🎯 Direct Pattern Navigation
+Click any category card to go directly to its main pattern page, eliminating unnecessary intermediate pages.
+
+### 🔍 Real-Time Search
+Search across all patterns and examples instantly from the navigation bar.
+
+### 📱 Responsive Design
+Privacy Guardian design system with glassmorphism effects, optimized for all devices.
+
+### 🚀 Performance
+- React Query for efficient data caching
+- Next.js App Router with streaming
+- Turbopack for fast development
+- Optimized API routes
+
+## API Routes
+
+The application provides RESTful API endpoints:
+
+- `GET /api/categories` - List all pattern categories
+- `GET /api/patterns` - List all patterns (with pagination)
+- `GET /api/patterns/[id]` - Get pattern details with examples
+- `GET /api/patterns/category/[slug]` - Get patterns by category
+- `GET /api/categories/[slug]/main-pattern` - Get main pattern for category
+- `GET /api/search?q={query}` - Search patterns and examples
+
+## Development Commands
+
+```bash
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run start        # Start production server
+npm run type-check   # Run TypeScript type checking
+npm run lint         # Run ESLint
+
+# Data management
+npm run import:patterns  # Import pattern data from scraper
+npm run seed:test       # Seed test data for development
 ```
 
 ## Contributing
 
 We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
 
-### Submission Requirements
+### Submission Requirements (Stage 2)
 
 - Minimum 100-character justification for new patterns
 - Real-world example with screenshot
