@@ -50,9 +50,6 @@ export function CategoryCard({ category }: CategoryCardProps) {
             <div className="p-3 rounded-xl bg-gradient-to-br from-privacy-blue/10 to-privacy-purple/10 group-hover:from-privacy-blue/20 group-hover:to-privacy-purple/20 transition-all duration-300">
               <Icon className="w-6 h-6 text-privacy-blue" />
             </div>
-            <span className="text-sm text-muted-foreground">
-              {category.pattern_count} {category.pattern_count === 1 ? 'pattern' : 'patterns'}
-            </span>
           </div>
           <CardTitle className="text-xl group-hover:text-privacy-blue transition-colors">
             {category.name}
