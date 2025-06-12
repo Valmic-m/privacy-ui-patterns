@@ -1,0 +1,1454 @@
+{
+  "patterns": [
+    {
+      "pattern_number": 1,
+      "pattern_name": "Cookie Consent Banners",
+      "description": "",
+      "examples": [
+        {
+          "example_number": 1,
+          "company": "BBC",
+          "url": "https://www.bbc.com",
+          "title": "Persistent\n  bottom bar offering “Accept All / Manage Cookies”. Clear hierarchy &\n  secondary panel for granular control.",
+          "use_case": "Large\n  media sites targeting both EU & global visitors.",
+          "description": "",
+          "why_selected": "Demonstrates\n  balanced default (non‑essential cookies disabled) and quick access to\n  detailed settings.",
+          "pbd_alignment": "Proactive, Visibility,\n  End‑to‑End Security",
+          "nielsen_heuristics": "Visibility\n  of system status; User control & freedom"
+        },
+        {
+          "example_number": 2,
+          "company": "The New York Times",
+          "url": "https://www.nytimes.com",
+          "title": "Modal\n  overlay blocks content until a choice is made; includes vendor list via\n  “Cookie Preferences”.",
+          "use_case": "Subscription\n  news behind paywalls—needs clear legal basis before personalization.",
+          "description": "",
+          "why_selected": "Good\n  example of lawful necessity explanation plus preference centre.",
+          "pbd_alignment": "Privacy\n  as default, Respect for user privacy",
+          "nielsen_heuristics": "Help\n  users recognize, diagnose, recover"
+        },
+        {
+          "example_number": 3,
+          "company": "The Guardian",
+          "url": "https://www.theguardian.com",
+          "title": "Full‑width\n  header banner with “Yes, I’m happy” & “Manage my cookies” CTA plus\n  summary of purposes.",
+          "use_case": "Ad‑supported\n  EU publisher requiring explicit consent.",
+          "description": "",
+          "why_selected": "Progressive\n  disclosure & minimal space impact on reading flow.",
+          "pbd_alignment": "Privacy\n  as default, End‑to‑End security",
+          "nielsen_heuristics": "Aesthetic\n  & minimalist design"
+        },
+        {
+          "example_number": 4,
+          "company": "Lufthansa",
+          "url": "https://www.lufthansa.com",
+          "title": "Centre‑screen\n  dialog: tiered choices “Accept”, “Reject non‑essential”, “Customize”.",
+          "use_case": "Airlines\n  collecting PNR, location, & payment data.",
+          "description": "",
+          "why_selected": "Illustrates\n  compliant, multi‑action banner for sensitive personal data.",
+          "pbd_alignment": "Proactive, Privacy\n  embedded",
+          "nielsen_heuristics": "Match\n  between system & real world"
+        },
+        {
+          "example_number": 5,
+          "company": "ICO",
+          "url": "https://ico.org.uk",
+          "title": "Simple\n  banner with “Accept analytics cookies / Reject” + link to full policy.",
+          "use_case": "Government/regulatory\n  sites needing high trust.",
+          "description": "",
+          "why_selected": "Uses\n  plain language & immediate opt‑out to model best practice.",
+          "pbd_alignment": "Respect\n  for user privacy, Visibility",
+          "nielsen_heuristics": "Recognition\n  rather than recall"
+        },
+        {
+          "example_number": 1,
+          "company": "Privacy Policy",
+          "url": "https://www.apple.com/legal/privacy/",
+          "title": "Layered\n  page with high‑level summary bullets, expandable accordions, and topical\n  navigation sidebar.",
+          "use_case": "Global\n  hardware & services provider balancing legal depth with consumer\n  readability.",
+          "description": "",
+          "why_selected": "Demonstrates\n  progressive disclosure and visual hierarchy for dense policy text.",
+          "pbd_alignment": "Visibility, Privacy\n  embedded, Respect for user privacy",
+          "nielsen_heuristics": "Recognition\n  rather than recall; Aesthetic & minimalist design"
+        },
+        {
+          "example_number": 2,
+          "company": "Microsoft\n  Privacy Statement",
+          "url": "https://privacy.microsoft.com/",
+          "title": "Searchable\n  hub with context‑specific sub‑pages (Windows, Edge, Xbox) and inline\n  iconography.",
+          "use_case": "Large\n  multi‑product ecosystem needing granular but unified notice.",
+          "description": "",
+          "why_selected": "Illustrates\n  modular policy architecture to support varied data practices.",
+          "pbd_alignment": "Full\n  functionality, End‑to‑End security",
+          "nielsen_heuristics": "Consistency\n  & standards; Flexibility & efficiency"
+        },
+        {
+          "example_number": 3,
+          "company": "Mozilla\n  Privacy Notice",
+          "url": "https://www.mozilla.org/privacy/",
+          "title": "One‑screen\n  overview (“Privacy in a nutshell”) with links to shortened product notices\n  and translations.",
+          "use_case": "Non‑profit\n  browser & advocacy org emphasising transparency.",
+          "description": "",
+          "why_selected": "Clear,\n  plain‑language copy and human‑centric tone sets bar for readability.",
+          "pbd_alignment": "Visibility\n  & transparency, Proactive",
+          "nielsen_heuristics": "Match\n  between system & real world"
+        },
+        {
+          "example_number": 4,
+          "company": "Etsy\n  Privacy Policy",
+          "url": "https://www.etsy.com/legal/privacy",
+          "title": "Accordion\n  sections + right‑column sticky nav + contextual tooltips.",
+          "use_case": "Marketplace\n  handling seller & buyer PII plus payment data.",
+          "description": "",
+          "why_selected": "Good\n  example of e‑commerce policy optimised for mobile reading via collapsible\n  sections.",
+          "pbd_alignment": "Privacy\n  embedded, Privacy as default",
+          "nielsen_heuristics": "User\n  control & freedom; Minimalist design"
+        },
+        {
+          "example_number": 5,
+          "company": "Privacy Notice",
+          "url": "https://www.ikea.com/us/en/customer-service/privacy-policy/",
+          "title": "Region‑specific\n  selector with simplified FAQs and illustrative icons.",
+          "use_case": "Retailer\n  with distinct regional legal regimes (GDPR vs. CCPA).",
+          "description": "",
+          "why_selected": "Shows\n  geolocation‑aware notice that adapts to local law and language.",
+          "pbd_alignment": "Respect\n  for user privacy, Visibility",
+          "nielsen_heuristics": "Help\n  users recognize, diagnose, recover"
+        }
+      ]
+    },
+    {
+      "pattern_number": 3,
+      "pattern_name": "Just‑in‑Time",
+      "description": "",
+      "examples": [
+        {
+          "example_number": 1,
+          "company": "iOS",
+          "url": "https://developer.apple.com/design/human-interface-guidelines/location/",
+          "title": "System\n  modal appears the moment an app first calls CoreLocation.\n  Offers “Allow Once”, “Allow While Using App”, “Don’t Allow”, plus map\n  preview.",
+          "use_case": "Mobile\n  apps requesting fine‑grained or approximate GPS data.",
+          "description": "",
+          "why_selected": "Gold‑standard\n  OS‑level just‑in‑time prompt with granular and time‑bounded choices.",
+          "pbd_alignment": "Proactive, Privacy\n  as default, End‑to‑End security",
+          "nielsen_heuristics": "User\n  control & freedom; Visibility of system status"
+        },
+        {
+          "example_number": 2,
+          "company": "Android 14\n  Runtime Permissions",
+          "url": "https://developer.android.com/training/permissions/requesting",
+          "title": "Full‑screen\n  dialog triggered only on first sensitive API call; “Allow only while using”,\n  “Ask every time”, “Don’t allow”.",
+          "use_case": "Android\n  apps requesting camera, microphone, storage, etc.",
+          "description": "",
+          "why_selected": "Illustrates\n  contextual consent deferred until feature use, reducing habituation.",
+          "pbd_alignment": "Privacy\n  embedded, Respect for user privacy",
+          "nielsen_heuristics": "Recognition\n  rather than recall; Minimalist design"
+        },
+        {
+          "example_number": 3,
+          "company": "Microphone Access Prompt",
+          "url": "https://support.google.com/chrome/answer/2693767",
+          "title": "URL‑bar\n  chip with mini‑icon and dropdown (“Allow / Block”) triggered when a web app\n  calls getUserMedia().",
+          "use_case": "Web apps\n  seeking mic input (e.g., video conferencing).",
+          "description": "",
+          "why_selected": "Lightweight,\n  non‑modal banner respects browsing flow while ensuring explicit consent.",
+          "pbd_alignment": "Visibility, Full\n  functionality",
+          "nielsen_heuristics": "Consistency\n  & standards; Aesthetic design"
+        },
+        {
+          "example_number": 4,
+          "company": "Instagram",
+          "url": "https://help.instagram.com/179492815746317/",
+          "title": "OS‑integrated\n  prompt appears when user taps “Discover People”; offers continue without\n  contacts.",
+          "use_case": "Social\n  networking apps encouraging friend discovery while respecting privacy.",
+          "description": "",
+          "why_selected": "Good\n  example of app‑triggered, feature‑gated data request.",
+          "pbd_alignment": "Proactive, Positive‑sum",
+          "nielsen_heuristics": "Match\n  between system & real world"
+        },
+        {
+          "example_number": 5,
+          "company": "Location Access Prompt",
+          "url": "https://support.mozilla.org/en-US/kb/how-firefox-uses-geolocation",
+          "title": "Browser‑level\n  infobar with “Share Location / Don’t Share / Always\n  Share” plus site‑info icon to revoke later.",
+          "use_case": "Privacy‑centric\n  browser reinforcing transparency for websites.",
+          "description": "",
+          "why_selected": "Showcases\n  revocable, per‑site decision history aligning with user expectations.",
+          "pbd_alignment": "Visibility\n  & transparency, Respect for user privacy",
+          "nielsen_heuristics": "Help\n  users recognize, diagnose, recover"
+        }
+      ]
+    },
+    {
+      "pattern_number": 4,
+      "pattern_name": "Permission Requests (Camera / Microphone / Location)",
+      "description": "",
+      "examples": [
+        {
+          "example_number": 1,
+          "company": "Camera Access Dialog",
+          "url": "https://developer.apple.com/design/human-interface-guidelines/camera/",
+          "title": "OS‑level\n  modal triggered only when an app first calls the camera API; options: “Allow\n  Once”, “Allow While Using App”, “Don’t Allow”.",
+          "use_case": "Any iOS\n  app needing camera for photos, AR, or video.",
+          "description": "",
+          "why_selected": "Illustrates\n  granular, time‑bounded consent and contextual purpose string supplied by\n  developer.",
+          "pbd_alignment": "Proactive, Privacy\n  as default, Respect for user privacy",
+          "nielsen_heuristics": "User\n  control & freedom; Visibility of system status"
+        },
+        {
+          "example_number": 2,
+          "company": "Camera Runtime Permission",
+          "url": "https://developer.android.com/about/versions/14/behavior-changes-14#runtime-permissions",
+          "title": "Full‑screen\n  dialog with “While using the app / Only this time / Don’t allow”. Denial\n  results in SECURITY_EXCEPTION.",
+          "use_case": "Android\n  apps recording video or scanning QR codes.",
+          "description": "",
+          "why_selected": "Demonstrates\n  symmetrical design with OS‑wide permission dashboard for later revocation.",
+          "pbd_alignment": "Privacy\n  embedded, End‑to‑End security",
+          "nielsen_heuristics": "Consistency\n  & standards; Error prevention"
+        },
+        {
+          "example_number": 3,
+          "company": "Google",
+          "url": "https://support.google.com/chrome/answer/2693767#camera",
+          "title": "URL‑bar\n  chip + dropdown (“Allow / Block”) appears when site calls getUserMedia({ video:true }); icon\n  persists while active.",
+          "use_case": "Web\n  conferencing apps (e.g., Google Meet, Teams, Zoom).",
+          "description": "",
+          "why_selected": "Non‑modal,\n  site‑specific decision with persistent indicator and quick revoke.",
+          "pbd_alignment": "Visibility\n  & transparency, Positive‑sum",
+          "nielsen_heuristics": "Recognition\n  rather than recall; Aesthetic & minimalist design"
+        },
+        {
+          "example_number": 4,
+          "company": "Screen",
+          "url": "https://support.snapchat.com/en-US/article/camera-access",
+          "title": "In‑app\n  explanatory screen precedes OS dialog, explaining need for camera with\n  illustrative graphic and CTA “Turn On”.",
+          "use_case": "Social\n  media encouraging real‑time video capture.",
+          "description": "",
+          "why_selected": "Shows\n  rationale‑before‑request pattern that improves accept rates without dark\n  patterns.",
+          "pbd_alignment": "Proactive, Visibility",
+          "nielsen_heuristics": "Match\n  between system & real world; Help users recognize, diagnose, recover"
+        },
+        {
+          "example_number": 5,
+          "company": "Prompt",
+          "url": "https://www.meta.com/quest/privacy/",
+          "title": "Immersive\n  overlay requesting permission to record and stream passthrough; “Allow / Deny\n  / Always Allow”.",
+          "use_case": "VR\n  applications needing mixed‑reality capture.",
+          "description": "",
+          "why_selected": "Highlights\n  emerging AR/VR context where camera covers entire environment; stresses\n  explicit, revocable consent.",
+          "pbd_alignment": "End‑to‑End\n  security, Respect for user privacy",
+          "nielsen_heuristics": "Flexibility\n  & efficiency; Error prevention"
+        },
+        {
+          "example_number": 1,
+          "company": "Meta",
+          "url": "https://www.facebook.com/settings",
+          "title": "Two-step\n  flow: (1) Download archive (JSON/HTML) via wizard; (2) Permanent delete or\n  temporary deactivate. Clear warnings, progress meter, and email receipts.",
+          "use_case": "Social\n  networks with rich personal data, photos, connections.",
+          "description": "",
+          "why_selected": "Combines\n  data portability (Art. 20) and right to erasure (Art. 17) in one place;\n  provides granular export format choices.",
+          "pbd_alignment": "Proactive, Visibility,\n  End‑to‑End security",
+          "nielsen_heuristics": "User\n  control & freedom; Error prevention"
+        },
+        {
+          "example_number": 2,
+          "company": "Google\n  Takeout",
+          "url": "https://takeout.google.com",
+          "title": "Multi‑select\n  list of 50+ Google services, push or pull export (email link, Drive),\n  multiple formats (JSON, MBOX). Separate “Delete a Google Service” panel.",
+          "use_case": "Cloud\n  ecosystems spanning mail, photos, docs, etc.",
+          "description": "",
+          "why_selected": "Exemplifies\n  scalable multi‑service export with progress email and queue status.",
+          "pbd_alignment": "Full\n  functionality, Respect for user privacy",
+          "nielsen_heuristics": "Flexibility\n  & efficiency; Visibility of system status"
+        },
+        {
+          "example_number": 3,
+          "company": "Spotify",
+          "url": "https://support.spotify.com/us/article/data-rights-and-privacy-settings/",
+          "title": "In‑app\n  help flow opens browser wizard: verify email, confirm, five‑day cooling\n  period. CSV/JSON export for playlists & listening history.",
+          "use_case": "Subscription\n  media service retaining long‑term behavioural data.",
+          "description": "",
+          "why_selected": "Showcases\n  cooling‑off window and reversible deletion aligning with dark‑pattern\n  avoidance.",
+          "pbd_alignment": "Privacy\n  as default, Positive‑sum",
+          "nielsen_heuristics": "Help\n  users recognize, diagnose, recover"
+        },
+        {
+          "example_number": 4,
+          "company": "Data & Privacy Portal",
+          "url": "https://privacy.apple.com",
+          "title": "Authenticated\n  web portal with “Get a copy of your data” wizard and one‑click “Delete your\n  account”. Provides estimate of file size and time.",
+          "use_case": "Device +\n  services vendor where Apple ID spans multiple platforms.",
+          "description": "",
+          "why_selected": "Uses\n  plain‑language explanation, estimated wait times, and real‑time status\n  tracking.",
+          "pbd_alignment": "Visibility\n  & transparency, End‑to‑End security",
+          "nielsen_heuristics": "Aesthetic\n  & minimalist design; Visibility of system status"
+        },
+        {
+          "example_number": 5,
+          "company": "Deactivate Account",
+          "url": "https://help.twitter.com/en/managing-your-account/how-to-deactivate-twitter-account",
+          "title": "Deactivation\n  screen in Settings: warns deletion after\n  30 days; provides link to “Request Your Archive” beforehand.",
+          "use_case": "Micro‑blogging\n  networks holding large public posting history.",
+          "description": "",
+          "why_selected": "Highlights\n  interplay between deactivation grace period and export; warns dependencies\n  (ads, analytics).",
+          "pbd_alignment": "Proactive, Respect\n  for user privacy",
+          "nielsen_heuristics": "Error\n  prevention; Consistency & standards"
+        }
+      ]
+    },
+    {
+      "pattern_number": 6,
+      "pattern_name": "Privacy‑Settings",
+      "description": "",
+      "examples": [
+        {
+          "example_number": 1,
+          "company": "Privacy & Personalization",
+          "url": "https://myaccount.google.com/privacycheckup",
+          "title": "Card‑based\n  wizard surfaces each data stream (Web & App Activity, YouTube\n  History, Ad Personalization) with binary toggles and inline explanations.\n  Progress bar guides the user through four steps",
+          "use_case": "Ecosystems\n  aggregating cross‑product data needing central control over collection &\n  use.",
+          "description": "",
+          "why_selected": "Shows\n  progressive‑disclosure, checklist pattern that scales across products and\n  devices.",
+          "pbd_alignment": "Visibility, Proactive,\n  Full functionality",
+          "nielsen_heuristics": "Recognition\n  rather than recall; Flexibility & efficiency"
+        },
+        {
+          "example_number": 2,
+          "company": "Privacy Checkup",
+          "url": "https://www.facebook.com/privacy/checkup",
+          "title": "Overlay\n  wizard with five sequential modules (Posts, Profile, Apps, Ad Preferences,\n  Face Recognition). Visual meter and plain‑language tips.",
+          "use_case": "Social\n  networks with complex, legacy settings spread across menus.",
+          "description": "",
+          "why_selected": "Demonstrates\n  task‑focused segmentation, reducing cognitive load while meeting GDPR Art.\n  25.",
+          "pbd_alignment": "Privacy\n  embedded, Respect for user privacy",
+          "nielsen_heuristics": "Aesthetic\n  & minimalist design; User control & freedom"
+        },
+        {
+          "example_number": 4,
+          "company": "Microsoft\n  Account - Privacy Dashboard",
+          "url": "https://account.microsoft.com/privacy",
+          "title": "Web\n  portal lists telemetry categories (Location, Search, Browsing, Voice) plus\n  delete/export buttons and ad‑settings toggles. Provides visual data‑usage\n  timeline.",
+          "use_case": "Cloud/OS\n  vendor balancing telemetry with user agency.",
+          "description": "",
+          "why_selected": "Combines\n  data‑view, delete, export, and advertising settings in a single authenticated\n  portal.",
+          "pbd_alignment": "Visibility\n  & transparency, Positive‑sum",
+          "nielsen_heuristics": "Visibility\n  of system status; Help users recognize, diagnose, recover"
+        }
+      ]
+    },
+    {
+      "pattern_number": 7,
+      "pattern_name": "Third‑Party",
+      "description": "",
+      "examples": [
+        {
+          "example_number": 1,
+          "company": "Google Ad\n  Settings - Ad Personalization Toggle",
+          "url": "https://adssettings.google.com/authenticated",
+          "title": "Account‑level\n  dashboard toggle to disable personalized ads across Google services and\n  partner sites; includes feedback on ad topics and data signals.",
+          "use_case": "Users\n  with Google Account seeking transparency and control over interest‑based\n  advertising.",
+          "description": "",
+          "why_selected": "Provides\n  granular review of inferred interests and single‑switch opt‑out, satisfying\n  GDPR Art. 21 (right to object).",
+          "pbd_alignment": "Visibility, Respect\n  for user privacy",
+          "nielsen_heuristics": "User\n  control & freedom; Visibility of system status"
+        },
+        {
+          "example_number": 2,
+          "company": "Out Tool",
+          "url": "https://optout.networkadvertising.org/",
+          "title": "Web\n  interface scans participating third‑party cookies and lets users\n  bulk‑opt‑out via cookie writes; shows per‑company\n  status.",
+          "use_case": "US\n  publishers relying on multiple ad networks; CCPA Do‑Not‑Sell compliance.",
+          "description": "",
+          "why_selected": "Illustrates\n  industry self‑regulatory mechanism with bulk action and status feedback.",
+          "pbd_alignment": "Full\n  functionality, Transparency",
+          "nielsen_heuristics": "Recognition\n  rather than recall; Flexibility & efficiency"
+        },
+        {
+          "example_number": 3,
+          "company": "Out",
+          "url": "https://www.youronlinechoices.eu/",
+          "title": "Interactive\n  list of 120+ vendors with “On/Off” switches; stores consent in euconsent cookie; multi‑lingual.",
+          "use_case": "",
+          "description": "",
+          "why_selected": "",
+          "pbd_alignment": "",
+          "nielsen_heuristics": ""
+        }
+      ]
+    },
+    {
+      "pattern_number": 7,
+      "pattern_name": "REDO: Third‑Party",
+      "description": "",
+      "examples": [
+        {
+          "example_number": 1,
+          "company": "Google Ad\n  Settings - Ad Personalization Toggle",
+          "url": "https://adssettings.google.com/authenticated",
+          "title": "Account‑level\n  dashboard toggle to disable personalized ads across Google services and\n  partner sites; includes feedback on ad topics and data signals.",
+          "use_case": "Users\n  with Google Account seeking transparency and control over interest‑based\n  advertising.",
+          "description": "",
+          "why_selected": "Provides\n  granular review of inferred interests and single‑switch opt‑out, satisfying\n  GDPR Art. 21 (right to object).",
+          "pbd_alignment": "Visibility, Respect\n  for user privacy",
+          "nielsen_heuristics": "User\n  control & freedom; Visibility of system status"
+        },
+        {
+          "example_number": 2,
+          "company": "Out Tool",
+          "url": "https://optout.networkadvertising.org/",
+          "title": "Web\n  interface scans participating third‑party cookies and lets users\n  bulk‑opt‑out via cookie writes; shows per‑company\n  status.",
+          "use_case": "US\n  publishers relying on multiple ad networks; CCPA Do‑Not‑Sell compliance.",
+          "description": "",
+          "why_selected": "Illustrates\n  industry self‑regulatory mechanism with bulk action and status feedback.",
+          "pbd_alignment": "Full\n  functionality, Transparency",
+          "nielsen_heuristics": "Recognition\n  rather than recall; Flexibility & efficiency"
+        }
+      ]
+    },
+    {
+      "pattern_number": 8,
+      "pattern_name": "Device-Permission Flows (iOS / Android)",
+      "description": "",
+      "examples": [
+        {
+          "example_number": 1,
+          "company": "Run Permission Sequence",
+          "url": "https://developer.apple.com/design/human-interface-guidelines/foundations/privacy",
+          "title": "Apple’s\n  HIG prescribes a two‑part sequence: optional in‑app rationale, then system\n  permission sheet with choices (Once / While Using / Never).",
+          "use_case": "Any iOS\n  app requesting sensors or personal data.",
+          "description": "",
+          "why_selected": "Canonical,\n  OS‑enforced pattern that prevents manipulation and supports developer‑provided\n  purpose strings.",
+          "pbd_alignment": "Proactive, Privacy\n  as default, Respect for user privacy",
+          "nielsen_heuristics": "User\n  control & freedom; Visibility of system status"
+        },
+        {
+          "example_number": 2,
+          "company": "Reset",
+          "url": "https://developer.android.com/about/versions/14/permissions",
+          "title": "Dialog\n  requests at first use, snackbar confirmation, and\n  auto‑reset after 3 months unused; reviewable via Settings ▸ Privacy ▸ Permission manager.",
+          "use_case": "Android\n  apps needing location, camera, SMS, etc.",
+          "description": "",
+          "why_selected": "Shows\n  life‑cycle approach—grant, monitor, auto‑revoke—aligning with data\n  minimization.",
+          "pbd_alignment": "Proactive, End‑to‑End\n  security",
+          "nielsen_heuristics": "Error\n  prevention; Consistency & standards"
+        },
+        {
+          "example_number": 5,
+          "company": "Samsung\n  One UI - Permission Manager Quick Tiles",
+          "url": "https://www.samsung.com/us/support/answer/ANS00088639/",
+          "title": "Quick‑panel\n  tiles to toggle camera/mic; green status‑bar indicators.",
+          "use_case": "Manufacturer\n  overlay offers layered controls.",
+          "description": "",
+          "why_selected": "Demonstrates\n  OEM‑level privacy enhancements beyond stock Android.",
+          "pbd_alignment": "Privacy\n  as default, Proactive",
+          "nielsen_heuristics": "Visibility\n  of system status; Consistency & standards"
+        },
+        {
+          "example_number": 6,
+          "company": "Link Permissions",
+          "url": "https://support.google.com/googleplay/android-developer/answer/10787469",
+          "title": "Store\n  listing shows declared data access before install; deep link to explanations.",
+          "use_case": "Pre‑install\n  transparency.",
+          "description": "",
+          "why_selected": "Shifts\n  consent earlier in journey, aligning with informed choice ideals.",
+          "pbd_alignment": "Proactive, Transparency",
+          "nielsen_heuristics": "Match\n  between system & real world; Error prevention"
+        }
+      ]
+    },
+    {
+      "pattern_number": 9,
+      "pattern_name": "Contextual Consent for Sensitive Data",
+      "description": "",
+      "examples": [
+        {
+          "example_number": 1,
+          "company": "Apple",
+          "url": "https://support.apple.com/en-us/HT212593",
+          "title": "In‑app\n  card appears only when user taps Sharing ▸ Add Doctor;\n  explains what data types (labs, vitals) will be shared and enables granular\n  toggles.",
+          "use_case": "Health‑record\n  sharing between patients and healthcare providers.",
+          "description": "",
+          "why_selected": "Demonstrates\n  explicit, context‑triggered consent for highly sensitive health data\n  (GDPR Art. 9).",
+          "pbd_alignment": "Proactive, Privacy\n  as default, Respect for user privacy",
+          "nielsen_heuristics": "User control\n  & freedom; Match between system & real world"
+        },
+        {
+          "example_number": 2,
+          "company": "Rate Beta",
+          "url": "https://blog.google/products/google-fit/heart-rate-breathing/",
+          "title": "Overlay\n  appears when user first starts camera‑based measurement:\n  explains sensitive biometrics, light/heart‑rate analysis, local processing.\n  “Got it / Allow Camera” options.",
+          "use_case": "Fitness\n  apps capturing physiological signals via camera.",
+          "description": "",
+          "why_selected": "Shows sensor‑specific,\n  just‑in‑time consent with privacy explanation for raw bio‑signals.",
+          "pbd_alignment": "Proactive, Transparency",
+          "nielsen_heuristics": "Error\n  prevention; Aesthetic & minimalist design"
+        },
+        {
+          "example_number": 3,
+          "company": "WhatsApp -\n  Live Location Sharing",
+          "url": "https://faq.whatsapp.com/iphone/features/how-to-share-your-live-location",
+          "title": "Modal\n  sheet appears when user taps Attach ▸ Location:\n  duration slider (15 min/1 hr/8 hr) + encryption notice. Can stop sharing\n  anytime.",
+          "use_case": "Messaging\n  apps sharing continuous GPS.",
+          "description": "",
+          "why_selected": "Exemplifies\n  time‑bounded, revocable consent for continuous sensitive location.",
+          "pbd_alignment": "Visibility, Positive‑sum",
+          "nielsen_heuristics": "Flexibility\n  & efficiency; Visibility of system status"
+        },
+        {
+          "example_number": 4,
+          "company": "Microsoft\n  Entra Verified ID - Credential Sharing Prompt",
+          "url": "https://learn.microsoft.com/en-us/entra/verified-id/",
+          "title": "When\n  scanning a QR code, user sees a credential‑preview card listing each claim\n  (legal name, DOB) and tap Share to send only selected claims.",
+          "use_case": "Digital\n  identity wallets exchanging verifiable credentials.",
+          "description": "",
+          "why_selected": "Fine‑grained\n  consent for sensitive identity data supports data minimization.",
+          "pbd_alignment": "End‑to‑End\n  security, Privacy embedded",
+          "nielsen_heuristics": "Recognition\n  rather than recall; Consistency & standards"
+        },
+        {
+          "example_number": 5,
+          "company": "LinkedIn",
+          "url": "https://www.linkedin.com/help/linkedin/answer/a1340510",
+          "title": "Voluntary,\n  skip‑able overlay offered when editing profile; explains usage for diversity\n  analytics, not public, can remove anytime.",
+          "use_case": "Collecting\n  race/ethnicity, gender‑identity—sensitive data under EU/US laws.",
+          "description": "",
+          "why_selected": "Provides\n  contextual explanation, voluntariness, and easy withdrawal.",
+          "pbd_alignment": "Respect\n  for user privacy, Visibility & transparency",
+          "nielsen_heuristics": "Help\n  users recognize, diagnose, recover; Minimalist design"
+        }
+      ]
+    },
+    {
+      "pattern_number": 10,
+      "pattern_name": "Child‑Privacy",
+      "description": "",
+      "examples": [
+        {
+          "example_number": 1,
+          "company": "YouTube Kids\n  - Parental Gate Math Challenge",
+          "url": "https://support.google.com/youtubekids/answer/6172308",
+          "title": "Before\n  accessing settings or external links, child is shown a simple arithmetic\n  puzzle that an adult can solve quickly; prevents accidental navigation.",
+          "use_case": "COPPA‑compliant\n  kids’ video platform limiting under‑13 autonomy.",
+          "description": "",
+          "why_selected": "Demonstrates\n  low‑friction yet effective adult verification without personal data\n  collection.",
+          "pbd_alignment": "Privacy\n  as default, Proactive",
+          "nielsen_heuristics": "Error\n  prevention; Match between system & real world"
+        },
+        {
+          "example_number": 2,
+          "company": "Family Sharing",
+          "url": "https://support.apple.com/enus/HT201089",
+          "title": "When\n  child (<13) requests an app, parent receives approval prompt on their\n  device; purchase held until approved.",
+          "use_case": "Preventing\n  unauthorized downloads & data collection from minors.",
+          "description": "",
+          "why_selected": "Asynchronous,\n  device‑linked guardian approval flow aligned with parental consent\n  requirements.",
+          "pbd_alignment": "End‑to‑End\n  security, Positive‑sum",
+          "nielsen_heuristics": "User\n  control & freedom; Visibility of system status"
+        },
+        {
+          "example_number": 3,
+          "company": "Parent PIN",
+          "url": "https://en.help.roblox.com/hc/enus/articles/203313410-ParentalControls",
+          "title": "Users\n  enter government ID + selfie for 13+ voice chat; optional 4‑digit PIN locks\n  account settings for kids.",
+          "use_case": "Metaverse\n  platform with UGC; must segregate adult features.",
+          "description": "",
+          "why_selected": "Combines\n  biometric ID verification with PIN‑guarded settings, balancing access &\n  safety.",
+          "pbd_alignment": "Proactive, Respect\n  for user privacy",
+          "nielsen_heuristics": "Consistency\n  & standards; Error prevention"
+        },
+        {
+          "example_number": 4,
+          "company": "TikTok",
+          "url": "https://support.tiktok.com/en/accountandprivacy/familypairing",
+          "title": "Mandatory\n  DOB on sign‑up; accounts under 13 diverted to “TikTok for Younger Users”;\n  Family Pairing lets parents link and manage screen‑time, DMs, content.",
+          "use_case": "Short‑video\n  platform under COPPA/GDPR‑K.",
+          "description": "",
+          "why_selected": "Shows dual-layer: initial age gate plus ongoing guardianship\n  controls.",
+          "pbd_alignment": "Visibility\n  & transparency, Privacy embedded",
+          "nielsen_heuristics": "Aesthetic\n  & minimalist design; Help users recognize, diagnose, recover"
+        },
+        {
+          "example_number": 5,
+          "company": "Based Permissions",
+          "url": "https://families.google.com/familylink/",
+          "title": "Children’s\n  accounts governed by guardian dashboard: approve app installs, set bedtimes,\n  view activity. Age gating on app content ratings.",
+          "use_case": "Android\n  ecosystem for families.",
+          "description": "",
+          "why_selected": "Illustrates\n  integrated, cross‑device parental consent and monitoring flow.",
+          "pbd_alignment": "Proactive, Full\n  functionality",
+          "nielsen_heuristics": "Recognition\n  rather than recall; Flexibility & efficiency"
+        },
+        {
+          "example_number": 1,
+          "company": "Dialog",
+          "url": "https://signal.org/blog/signal-telemetry/",
+          "title": "Lean\n  modal with two equal‑weight CTAs: “Share” and “No Thanks”; default is off\n  unless actively enabled.",
+          "use_case": "Privacy‑centric\n  messaging app deciding on optional telemetry.",
+          "description": "",
+          "why_selected": "Illustrates\n  symmetrical choice, neutral language, and no-preselected option—avoids\n  coercive consent.",
+          "pbd_alignment": "Privacy\n  as default, Respect for user privacy",
+          "nielsen_heuristics": "User\n  control & freedom; Aesthetic & minimalist design"
+        },
+        {
+          "example_number": 2,
+          "company": "BBC",
+          "url": "https://www.bbc.com",
+          "title": "Banner\n  offers “Reject All” and “Accept All” buttons side‑by‑side in identical\n  styling; granular controls via link.",
+          "use_case": "Large\n  media site complying with UK ICO guidance.",
+          "description": "",
+          "why_selected": "Demonstrates\n  equal effort choices, countering “confirmshaming”\n  dark patterns.",
+          "pbd_alignment": "Visibility\n  & transparency, Proactive",
+          "nielsen_heuristics": "Consistency\n  & standards; Error prevention"
+        },
+        {
+          "example_number": 3,
+          "company": "Netflix -\n  Cancel Membership Flow",
+          "url": "https://help.netflix.com/en/node/407",
+          "title": "Two‑step\n  process: Account ▸ Cancel\n  Membership leads to confirmation page with single\n  “Finish Cancellation” button; no hidden hurdles.",
+          "use_case": "Subscription\n  service with recurring billing.",
+          "description": "",
+          "why_selected": "Showcases\n  straightforward off‑boarding without salvage offers that delay exit—aligns\n  with FTC “Click to Cancel” proposal.",
+          "pbd_alignment": "Full\n  functionality, End‑to‑End security",
+          "nielsen_heuristics": "Flexibility\n  & efficiency; Help users recognize, diagnose, recover"
+        },
+        {
+          "example_number": 4,
+          "company": "Prompt",
+          "url": "https://developer.apple.com/appstore/userprivacyanddatause/",
+          "title": "Standard\n  system sheet: “Ask App Not to Track” option presented first, bolded equally\n  to “Allow”. App cannot customise copy beyond purpose string.",
+          "use_case": "Device‑wide\n  IDFA opt‑in across apps.",
+          "description": "",
+          "why_selected": "ATT\n  enforces balanced choice architecture via OS, preventing deceptive delays or microcopy.",
+          "pbd_alignment": "Proactive, Privacy\n  embedded",
+          "nielsen_heuristics": "Error\n  prevention; Visibility of system status"
+        },
+        {
+          "example_number": 5,
+          "company": "Click Unsubscribe Header",
+          "url": "https://support.google.com/mail/answer/81126",
+          "title": "Recognised\n  marketing emails show “Unsubscribe” link in header next to sender; removes\n  need to search footer.",
+          "use_case": "Email\n  client simplifying marketing opt‑outs.",
+          "description": "",
+          "why_selected": "Reduces\n  friction and eliminates misleading unsubscribe pages—example of “easy exit”\n  principle.",
+          "pbd_alignment": "Respect\n  for user privacy, Positive‑sum",
+          "nielsen_heuristics": "Recognition\n  rather than recall; User control & freedom"
+        },
+        {
+          "example_number": 1,
+          "company": "Delete",
+          "url": "https://myactivity.google.com/",
+          "title": "“Delete\n  activity by” dialog (date range / service), plus Auto‑Delete schedules\n  (3/18/36 months). History list shows past deletions.",
+          "use_case": "Users\n  controlling search, location, YouTube history.",
+          "description": "",
+          "why_selected": "Combines\n  on‑demand deletion, scheduled purging, and visible audit, aligning with GDPR\n  Art. 7(3) & 17.",
+          "pbd_alignment": "Proactive, Visibility\n  & transparency",
+          "nielsen_heuristics": "User\n  control & freedom; Recognition rather than recall"
+        },
+        {
+          "example_number": 2,
+          "company": "Facebook Activity & Activity Log",
+          "url": "https://www.facebook.com/off_facebook_activity",
+          "title": "Dashboard\n  lists third‑party data received; single‑tap “Clear History” + toggle “Future\n  Activity”. Timestamped log provides evidence of withdrawal.",
+          "use_case": "Social\n  platforms processing external browsing data.",
+          "description": "",
+          "why_selected": "Shows\n  comprehensive background data view with one‑click revoke & future\n  blocking.",
+          "pbd_alignment": "End‑to-End\n  security, Respect for user privacy",
+          "nielsen_heuristics": "Visibility\n  of system status; Flexibility & efficiency"
+        },
+        {
+          "example_number": 4,
+          "company": "Manage",
+          "url": "https://www.linkedin.com/psettings/advertising-data",
+          "title": "List of\n  ad interactions and inferred interests; “Clear History” and toggle sharing\n  with partners.",
+          "use_case": "Professional\n  network’s targeted advertising controls.",
+          "description": "",
+          "why_selected": "Provides\n  granular revoke & clear with explanatory tooltips—avoids dark patterns.",
+          "pbd_alignment": "Visibility, Positive‑sum",
+          "nielsen_heuristics": "Aesthetic\n  & minimalist design; Help users recognize, diagnose, recover"
+        },
+        {
+          "example_number": 5,
+          "company": "Slack -\n  Authorized Apps Revocation",
+          "url": "https://my.slack.com/apps/manage",
+          "title": "Workspace\n  Settings list OAuth‑authorized apps/bots; each row has “Remove” + timestamp\n  of grant.",
+          "use_case": "SaaS\n  collaboration where third‑party integrations access messages.",
+          "description": "",
+          "why_selected": "Demonstrates\n  transparent grant history and instant token revoke for enterprise compliance.",
+          "pbd_alignment": "End‑to-End\n  security, Proactive",
+          "nielsen_heuristics": "User\n  control & freedom; Error prevention"
+        }
+      ]
+    },
+    {
+      "pattern_number": 13,
+      "pattern_name": "Privacy‑First",
+      "description": "",
+      "examples": [
+        {
+          "example_number": 1,
+          "company": "Apple",
+          "url": "https://support.apple.com/HT210677",
+          "title": "Enabled\n  by default on macOS/iOS; blocks third‑party cookies and fingerprinting\n  scripts.",
+          "use_case": "Everyday\n  web browsing on Apple devices.",
+          "description": "",
+          "why_selected": "Illustrates\n  PbD Principle 2 (privacy as default) at\n  browser level without user action.",
+          "pbd_alignment": "Privacy\n  as default, Proactive",
+          "nielsen_heuristics": "Error\n  prevention; Consistency & standards"
+        },
+        {
+          "example_number": 2,
+          "company": "Firefox",
+          "url": "https://support.mozilla.org/en-US/kb/enhanced-tracking-protection-firefox",
+          "title": "Shipping\n  default blocks social trackers, cross‑site cookies, cryptominers.\n  Strict mode opt‑in available.",
+          "use_case": "Privacy‑oriented\n  browser across platforms.",
+          "description": "",
+          "why_selected": "Shows\n  balanced default protecting users while minimizing breakage.",
+          "pbd_alignment": "Privacy\n  embedded, Visibility",
+          "nielsen_heuristics": "Visibility\n  of system status; Aesthetic & minimalist design"
+        },
+        {
+          "example_number": 3,
+          "company": "Brave\n  Browser - Shields Up",
+          "url": "https://brave.com/shields/",
+          "title": "Ads &\n  trackers blocked, HTTPS upgrade, fingerprinting protection all ON by default.\n  Toggle in URL‑bar for per‑site override.",
+          "use_case": "Chromium‑based\n  privacy browser.",
+          "description": "",
+          "why_selected": "Demonstrates\n  maximal privacy‑first stance with easy override, positive‑sum design.",
+          "pbd_alignment": "End‑to‑End\n  security, Respect for user privacy",
+          "nielsen_heuristics": "User\n  control & freedom; Flexibility & efficiency"
+        },
+        {
+          "example_number": 4,
+          "company": "OS -\n  Limited Photo Library Picker Default",
+          "url": "https://developer.apple.com/wwdc21/10110",
+          "title": "When an\n  app requests photos, default option presented is “Select Photos…” rather than\n  full library; user must choose to allow all.",
+          "use_case": "Mobile\n  apps accessing camera roll.",
+          "description": "",
+          "why_selected": "Implements\n  data minimisation default, reducing over‑collection.",
+          "pbd_alignment": "Privacy\n  as default, Positive‑sum",
+          "nielsen_heuristics": "Match\n  between system & real world; Error prevention"
+        },
+        {
+          "example_number": 5,
+          "company": "Google",
+          "url": "https://support.google.com/accounts/answer/2662856",
+          "title": "In GDPR\n  region, personalized ads default disabled until user opts‑in via\n  banner/dashboard.",
+          "use_case": "Mobile ad\n  ecosystem compliance.",
+          "description": "",
+          "why_selected": "Example\n  of regional default respecting stricter regulation.",
+          "pbd_alignment": "Proactive, Visibility\n  & transparency",
+          "nielsen_heuristics": "Recognition\n  rather than recall; Consistency & standards"
+        }
+      ]
+    },
+    {
+      "pattern_number": 14,
+      "pattern_name": "Data‑Access",
+      "description": "",
+      "examples": [
+        {
+          "example_number": 1,
+          "company": "Google\n  Takeout",
+          "url": "https://takeout.google.com",
+          "title": "Multi‑step\n  wizard lets users select 50+ Google products, choose file format (JSON/MBOX),\n  delivery method, schedule exports. Progress emails sent.",
+          "use_case": "Large\n  ecosystem providing data portability and Art. 15 access.",
+          "description": "",
+          "why_selected": "Scalable,\n  self‑service DSAR with granular selection and asynchronous processing.",
+          "pbd_alignment": "Visibility, Respect\n  for user privacy",
+          "nielsen_heuristics": "User\n  control & freedom; Visibility of system status"
+        },
+        {
+          "example_number": 2,
+          "company": "Apple\n  Data & Privacy Portal",
+          "url": "https://privacy.apple.com",
+          "title": "Auth‑gated\n  portal offers “Get a copy of your data” (estimated size/time) and status\n  tracker; separate flows for correct/delete.",
+          "use_case": "Device +\n  services vendor centralising data rights.",
+          "description": "",
+          "why_selected": "Exemplifies\n  transparent estimates and single login for multi‑platform data.",
+          "pbd_alignment": "Proactive, End‑to‑End\n  security",
+          "nielsen_heuristics": "Aesthetic\n  & minimalist design; Error prevention"
+        },
+        {
+          "example_number": 3,
+          "company": "Download Your Information",
+          "url": "https://www.facebook.com/dyi",
+          "title": "Checklist\n  of categories (posts, photos, messages), date range filter, HTML/JSON format,\n  “Available Files” tab for history.",
+          "use_case": "Social\n  network with diverse data types.",
+          "description": "",
+          "why_selected": "Shows\n  date‑range limiter and historical request log—good for large archives.",
+          "pbd_alignment": "Privacy\n  embedded, Visibility & transparency",
+          "nielsen_heuristics": "Recognition\n  rather than recall; Flexibility & efficiency"
+        },
+        {
+          "example_number": 4,
+          "company": "Microsoft\n  Privacy Dashboard -  Export Data",
+          "url": "https://account.microsoft.com/privacy",
+          "title": "One‑click\n  “Download your data” packages activity, billing, subscriptions; email\n  notification on completion.",
+          "use_case": "Cloud\n  & OS ecosystem fulfilling Art. 20 portability.",
+          "description": "",
+          "why_selected": "Demonstrates\n  simple, global export with secure link expiry.",
+          "pbd_alignment": "Proactive, Positive‑sum",
+          "nielsen_heuristics": "Consistency\n  & standards; Help users recognize, diagnose, recover"
+        },
+        {
+          "example_number": 5,
+          "company": "Airbnb - Personal\n  Data Download",
+          "url": "https://www.airbnb.com/privacy",
+          "title": "Request\n  form in Privacy Center; shows estimated time\n  (<72 h), email confirmation, and explains content of export.",
+          "use_case": "Marketplace\n  with identity docs & transaction data.",
+          "description": "",
+          "why_selected": "Good\n  example of timeframe disclosure and verification email for security.",
+          "pbd_alignment": "Visibility, End‑to‑End\n  security",
+          "nielsen_heuristics": "User\n  control & freedom; Error prevention"
+        },
+        {
+          "example_number": 1,
+          "company": "Example",
+          "url": "https://adssettings.google.com/authenticated",
+          "title": "X",
+          "use_case": "X",
+          "description": "",
+          "why_selected": "X",
+          "pbd_alignment": "X",
+          "nielsen_heuristics": "X"
+        },
+        {
+          "example_number": 1,
+          "company": "Example",
+          "url": "https://adssettings.google.com/authenticated",
+          "title": "X",
+          "use_case": "X",
+          "description": "",
+          "why_selected": "X",
+          "pbd_alignment": "X",
+          "nielsen_heuristics": "X"
+        },
+        {
+          "example_number": 1,
+          "company": "Example",
+          "url": "https://adssettings.google.com/authenticated",
+          "title": "X",
+          "use_case": "X",
+          "description": "",
+          "why_selected": "X",
+          "pbd_alignment": "X",
+          "nielsen_heuristics": "X"
+        },
+        {
+          "example_number": 1,
+          "company": "Example",
+          "url": "https://adssettings.google.com/authenticated",
+          "title": "X",
+          "use_case": "X",
+          "description": "",
+          "why_selected": "X",
+          "pbd_alignment": "X",
+          "nielsen_heuristics": "X"
+        },
+        {
+          "example_number": 1,
+          "company": "Example",
+          "url": "https://adssettings.google.com/authenticated",
+          "title": "X",
+          "use_case": "X",
+          "description": "",
+          "why_selected": "X",
+          "pbd_alignment": "X",
+          "nielsen_heuristics": "X"
+        },
+        {
+          "example_number": 1,
+          "company": "Example",
+          "url": "https://adssettings.google.com/authenticated",
+          "title": "X",
+          "use_case": "X",
+          "description": "",
+          "why_selected": "X",
+          "pbd_alignment": "X",
+          "nielsen_heuristics": "X"
+        },
+        {
+          "example_number": 1,
+          "company": "Panel",
+          "url": "https://newsroom.tiktok.com/en-us/how-we-recommend-videos-for-you",
+          "title": "Feed item\n  menu option opens card listing factors (likes, follows, region) influencing\n  recommendation; link to manage preferences.",
+          "use_case": "Short‑form\n  video algorithmic feed.",
+          "description": "",
+          "why_selected": "Early\n  large‑scale deployment of user‑facing recommender explanation satisfying EU\n  DSA transparency duties.",
+          "pbd_alignment": "Visibility\n  & transparency, Proactive",
+          "nielsen_heuristics": "Recognition\n  rather than recall; Help users recognize, diagnose, recover"
+        },
+        {
+          "example_number": 2,
+          "company": "Facebook",
+          "url": "https://www.facebook.com/business/help/1415256572060999",
+          "title": "Dropdown\n  explains targeting criteria (age, interests), data source, and buttons to\n  adjust ad topics.",
+          "use_case": "Targeted\n  advertising transparency.",
+          "description": "",
+          "why_selected": "Pioneering\n  pattern for ad‑delivery explainability with direct control links.",
+          "pbd_alignment": "Privacy\n  embedded, Positive‑sum",
+          "nielsen_heuristics": "User\n  control & freedom; Consistency & standards"
+        },
+        {
+          "example_number": 3,
+          "company": "Playlist Info",
+          "url": "https://support.spotify.com/article/made-for-you/",
+          "title": "Info icon\n  opens overlay describing listening habits, liked songs influencing mix;\n  dismissible tip.",
+          "use_case": "Music\n  recommendation algorithms.",
+          "description": "",
+          "why_selected": "Simple\n  micro‑explaination builds trust and encourages\n  feedback loops.",
+          "pbd_alignment": "Visibility, Respect\n  for user privacy",
+          "nielsen_heuristics": "Aesthetic\n  & minimalist design; Match between system & real world"
+        },
+        {
+          "example_number": 4,
+          "company": "LinkedIn -\n  Job Match Rationale",
+          "url": "https://www.linkedin.com/help/linkedin/answer/a507701",
+          "title": "Under\n  each job card, link shows matched skills, experience level, location; lets\n  users edit profile gaps.",
+          "use_case": "Hiring\n  algorithm explainability.",
+          "description": "",
+          "why_selected": "Connects\n  explanation with actionable profile edits, aligning incentives.",
+          "pbd_alignment": "Positive‑sum, Proactive",
+          "nielsen_heuristics": "Help\n  users recognize, diagnose, recover; Flexibility & efficiency"
+        },
+        {
+          "example_number": 5,
+          "company": "Google",
+          "url": "https://blog.google/products/search/about-this-result/",
+          "title": "Three‑dot\n  icon opens panel with source context, why result shown (language, location),\n  and tips to refine query.",
+          "use_case": "Search\n  ranking transparency.",
+          "description": "",
+          "why_selected": "Expands\n  beyond ads, giving algorithm factors and credibility cues.",
+          "pbd_alignment": "Visibility\n  & transparency, End‑to‑End security",
+          "nielsen_heuristics": "Error\n  prevention; User control & freedom"
+        },
+        {
+          "example_number": 6,
+          "company": "X\n  - Recommendation Controls",
+          "url": "https://blog.twitter.com/en_us/topics/product/2023/open-sourcing-the-algorithm",
+          "title": "Label\n  “Based on your likes” atop recommended tweet; tap … to hide similar\n  tweets.",
+          "use_case": "Social\n  algorithmic feed.",
+          "description": "",
+          "why_selected": "Lightweight\n  contextual cue plus direct feedback mechanism.",
+          "pbd_alignment": "Proactive, Privacy\n  embedded",
+          "nielsen_heuristics": "Visibility\n  of system status; Recognition rather than recall"
+        }
+      ]
+    },
+    {
+      "pattern_number": 22,
+      "pattern_name": "Incident & Breach Notifications",
+      "description": "",
+      "examples": [
+        {
+          "example_number": 1,
+          "company": "Breach Alert",
+          "url": "https://support.apple.com/HT210176",
+          "title": "Push\n  notification advises passwords found in known breach; deep‑links to Settings ▸ Passwords ▸ Security Recommendations.",
+          "use_case": "Device‑level\n  credential monitoring.",
+          "description": "",
+          "why_selected": "Timely,\n  actionable alert with one‑tap remediation.",
+          "pbd_alignment": "Proactive, End‑To‑End\n  security",
+          "nielsen_heuristics": "Error prevention; Help\n  users recognize, diagnose, recover"
+        },
+        {
+          "example_number": 2,
+          "company": "LastPass -\n  2022 Incident Banner & Email",
+          "url": "https://blog.lastpass.com/2022/12/notice-of-recent-security-incident/",
+          "title": "In‑app\n  banner + detailed post; email summarises impact, steps, and FAQ; dashboard\n  shows breach status.",
+          "use_case": "Password‑manager\n  security incident disclosure.",
+          "description": "",
+          "why_selected": "Combines\n  multi‑channel outreach and persistent in‑product banner until acknowledged.",
+          "pbd_alignment": "Visibility\n  & transparency, Respect for user privacy",
+          "nielsen_heuristics": "Visibility\n  of system status; User control & freedom"
+        },
+        {
+          "example_number": 3,
+          "company": "Facebook -\n  Suspicious Login Alert",
+          "url": "https://www.facebook.com/help/162968940433354",
+          "title": "In‑app\n  modal + email: “Your account was logged in from new device”; CTA to secure\n  account.",
+          "use_case": "Account‑takeover\n  detection.",
+          "description": "",
+          "why_selected": "Shows\n  user‑centric, immediate remediation flow.",
+          "pbd_alignment": "Proactive, Positive‑sum",
+          "nielsen_heuristics": "Consistency\n  & standards; Flexibility & efficiency"
+        },
+        {
+          "example_number": 4,
+          "company": "GitHub - Token\n  Exposure Revocation Notice",
+          "url": "https://github.blog/2022-03-08-security-incident-token-revocation/",
+          "title": "Email\n  describes affected tokens, automatically revokes, links to regenerate; header\n  banner persists until resolved.",
+          "use_case": "Developer\n  platform credential leaks.",
+          "description": "",
+          "why_selected": "Auto‑mitigation\n  plus clear guidance reduces friction.",
+          "pbd_alignment": "End‑To‑End\n  security, Privacy embedded",
+          "nielsen_heuristics": "User\n  control & freedom; Error prevention"
+        },
+        {
+          "example_number": 5,
+          "company": "Marriott",
+          "url": "https://answers.kroll.com/",
+          "title": "Secure\n  portal for guests to confirm if affected; PIN from email required; FAQs and\n  hotline numbers.",
+          "use_case": "Mass\n  breach affecting millions.",
+          "description": "",
+          "why_selected": "Dedicated\n  portal with identity verification before disclosure.",
+          "pbd_alignment": "Visibility\n  & transparency, Full functionality",
+          "nielsen_heuristics": "Help\n  users recognize, diagnose, recover; Recognition rather than recall"
+        },
+        {
+          "example_number": 6,
+          "company": "Microsoft\n  365 - Admin Center Incident Dashboard",
+          "url": "https://admin.microsoft.com/",
+          "title": "Real‑time\n  incident cards list service impacts, data exfil status, and customer‑action\n  steps; RSS feed.",
+          "use_case": "Enterprise\n  cloud breach communication.",
+          "description": "",
+          "why_selected": "Centralised,\n  role‑based incident feed improves organisational response.",
+          "pbd_alignment": "Proactive, Respect\n  for user privacy",
+          "nielsen_heuristics": "Visibility\n  of system status; Consistency & standards"
+        }
+      ]
+    },
+    {
+      "pattern_number": 23,
+      "pattern_name": "Biometric Privacy Controls",
+      "description": "",
+      "examples": [
+        {
+          "example_number": 1,
+          "company": "OS -\n  Face ID & Passcode Settings",
+          "url": "https://support.apple.com/enus/HT208108",
+          "title": "System\n  settings list per‑feature toggles (Unlock iPhone, Apple Pay, Password\n  AutoFill), “Reset Face ID,” and red Delete Face ID button\n  requiring passcode.",
+          "use_case": "Device\n  unlocking and auth across apps.",
+          "description": "",
+          "why_selected": "Shows\n  granular enable/disable & data deletion for stored face templates.",
+          "pbd_alignment": "Proactive, Privacy\n  as default",
+          "nielsen_heuristics": "User\n  control & freedom; Error prevention"
+        },
+        {
+          "example_number": 2,
+          "company": "Android\n  14 - Face Unlock Settings",
+          "url": "https://support.google.com/pixelphone/answer/7158901",
+          "title": "“Face &\n  Fingerprint Unlock” panel with “Delete face data,” slider for unlock only\n  when eyes open, app‑revoke list.",
+          "use_case": "Smartphone\n  biometric sign‑in.",
+          "description": "",
+          "why_selected": "Adds\n  liveness check toggle and per‑app scope—good least‑privilege model.",
+          "pbd_alignment": "End‑to‑End\n  security, Positive‑sum",
+          "nielsen_heuristics": "Consistency\n  & standards; Flexibility & efficiency"
+        },
+        {
+          "example_number": 3,
+          "company": "Amazon",
+          "url": "https://one.amazon.com/privacy",
+          "title": "Web\n  account dashboard lists enrolled palms with “Delete” and confirmation dialog;\n  email confirmation follows.",
+          "use_case": "Retail\n  palm‑print payment/ID service.",
+          "description": "",
+          "why_selected": "Explicit\n  deletion control for sensitive biometric IDs, aligning with CCPA §1798.140.",
+          "pbd_alignment": "Respect\n  for user privacy, Visibility",
+          "nielsen_heuristics": "Help\n  users recognize, diagnose, recover; Error prevention"
+        },
+        {
+          "example_number": 4,
+          "company": "Windows",
+          "url": "https://support.microsoft.com/windows/windows-hello-and-security-settings",
+          "title": "Settings ▸ Accounts ▸ Sign‑in options: Remove\n  face/fingerprint, PIN fallback, and toggle “Enhanced anti‑spoofing.”",
+          "use_case": "Desktop\n  OS login.",
+          "description": "",
+          "why_selected": "Provides\n  removal & anti‑spoofing enhancements with clear status icons.",
+          "pbd_alignment": "Privacy\n  embedded, End‑to‑End security",
+          "nielsen_heuristics": "Visibility\n  of system status; User control & freedom"
+        },
+        {
+          "example_number": 5,
+          "company": "Facebook -\n  Face Recognition Setting",
+          "url": "https://www.facebook.com/help/688323298408587",
+          "title": "Single\n  toggle: “Face recognition” ON/OFF; off deletes face template; explainer link.",
+          "use_case": "Tag\n  suggestions & accessibility alt‑text.",
+          "description": "",
+          "why_selected": "Simple\n  global switch with deletion promise meets GDPR Art 17.",
+          "pbd_alignment": "Privacy\n  as default, Visibility & transparency",
+          "nielsen_heuristics": "Aesthetic\n  & minimalist design; Recognition rather than recall"
+        },
+        {
+          "example_number": 6,
+          "company": "Google\n  Photos - Face Groups Setting",
+          "url": "https://support.google.com/photos/answer/6128858",
+          "title": "Toggle\n  for “Face grouping” with modal explaining local processing and how to clear\n  face models; “Delete face models” action.",
+          "use_case": "Personal\n  photo organisation.",
+          "description": "",
+          "why_selected": "Offers\n  opt‑out and local erase aligning with data minimisation.",
+          "pbd_alignment": "Proactive, Positive‑sum",
+          "nielsen_heuristics": "User\n  control & freedom; Match between system & real world"
+        },
+        {
+          "example_number": 1,
+          "company": "Meta\n  Quest - Guardian Boundary System",
+          "url": "https://www.meta.com/quest/privacy/",
+          "title": "On first\n  room‑setup, grid boundary appears; crossing triggers passthrough with red\n  warning; settings allow privacy‑zone reset and\n  exclusion of boundary data from cloud.",
+          "use_case": "Preventing\n  accidental recording or collisions in VR.",
+          "description": "",
+          "why_selected": "Classic\n  spatial ring fence; visual/auditory prompts protect\n  bystanders & property.",
+          "pbd_alignment": "Proactive, Error\n  prevention",
+          "nielsen_heuristics": "Visibility\n  of system status; User control & freedom"
+        },
+        {
+          "example_number": 2,
+          "company": "Apple",
+          "url": "https://www.apple.com/apple-vision-pro/privacy/",
+          "title": "External\n  display shows coloured waveform when device records video; on‑device overlay\n  “Recording” badge; bystanders see indicator.",
+          "use_case": "Mixed‑reality\n  headset environmental capture.",
+          "description": "",
+          "why_selected": "Hardware‑level\n  indicator plus software badge fosters bystander privacy awareness.",
+          "pbd_alignment": "Visibility\n  & transparency, End‑to‑End security",
+          "nielsen_heuristics": "Aesthetic\n  & minimalist design; Recognition rather than recall"
+        },
+        {
+          "example_number": 3,
+          "company": "Microsoft\n  HoloLens 2 - Spatial Mapping Consent Overlay",
+          "url": "https://learn.microsoft.com/hololens/privacy",
+          "title": "On start,\n  overlay asks to allow environment data; link to “Spatial Data” settings with\n  toggle to delete map.",
+          "use_case": "Industrial\n  AR with sensitive facilities.",
+          "description": "",
+          "why_selected": "Direct\n  consent + deletion capability for 3‑D scans aligning with GDPR minimisation.",
+          "pbd_alignment": "Proactive, Privacy\n  embedded",
+          "nielsen_heuristics": "User\n  control & freedom; Consistency & standards"
+        },
+        {
+          "example_number": 4,
+          "company": "Snap\n  Spectacles 3 - LED Recording Ring",
+          "url": "https://support.spectacles.com/hc/en-us/articles/360002206031",
+          "title": "Outward‑facing\n  LEDs light up during photo/video; cannot be disabled; press‑and‑hold to force\n  off.",
+          "use_case": "Wearable\n  camera glasses in public.",
+          "description": "",
+          "why_selected": "Hardware\n  indicator ensures notice to bystanders—regulatory focus area.",
+          "pbd_alignment": "Privacy\n  as default, Respect for user privacy",
+          "nielsen_heuristics": "Error\n  prevention; Visibility of system status"
+        },
+        {
+          "example_number": 5,
+          "company": "AR Prompt",
+          "url": "https://nianticlabs.com/privacy/scanning",
+          "title": "Before AR\n  mapping task, modal explains upload of video; user can opt‑out and still\n  play.",
+          "use_case": "Crowd‑sourced\n  AR map building.",
+          "description": "",
+          "why_selected": "In‑context\n  consent ensures optional sensitive data capture.",
+          "pbd_alignment": "Positive‑sum, Proactive",
+          "nielsen_heuristics": "Match\n  between system & real world; Flexibility & efficiency"
+        },
+        {
+          "example_number": 6,
+          "company": "Permission Banner",
+          "url": "https://mixedreality.mozilla.org/docs/webxr-permissions/",
+          "title": "Browser\n  banner requests “Immersive VR” & “CAMERA” permissions separately;\n  highlight warns about surrounding capture.",
+          "use_case": "Web‑based\n  XR experiences.",
+          "description": "",
+          "why_selected": "Example\n  of granular multimodal permission in XR web context.",
+          "pbd_alignment": "Privacy\n  embedded, Visibility",
+          "nielsen_heuristics": "Consistency\n  & standards; Error prevention"
+        },
+        {
+          "example_number": 1,
+          "company": "Tooltip",
+          "url": "https://support.apple.com/HT202100",
+          "title": "Settings ▸ Privacy & Security ▸ Analytics & Improvements explains that\n  analytics use “differential privacy” and lists daily “learning cap\n  resets”. Toggle defaults OFF in EU.",
+          "use_case": "Device\n  telemetry for feature improvement.",
+          "description": "",
+          "why_selected": "Only\n  mainstream mobile OS exposing the notion of a daily privacy budget to\n  the lay user.",
+          "pbd_alignment": "Privacy\n  as default, Proactive",
+          "nielsen_heuristics": "Recognition\n  rather than recall; Error prevention"
+        },
+        {
+          "example_number": 3,
+          "company": "Apple\n  Health Studies App - Contribution Meter",
+          "url": "https://www.apple.com/healthcare/health-studies/",
+          "title": "Enrolment\n  screen displays “Daily data contribution” bar, stating “noise added to\n  protect your privacy (differential privacy)”.",
+          "use_case": "Research\n  data donation.",
+          "description": "",
+          "why_selected": "Makes DP\n  tangible with progress bar and plain‑language copy.",
+          "pbd_alignment": "End‑to‑End\n  security, Respect for user privacy",
+          "nielsen_heuristics": "Aesthetic\n  & minimalist design; Help users recognize, diagnose, recover"
+        },
+        {
+          "example_number": 4,
+          "company": "Google",
+          "url": "https://support.google.com/maps/answer/7279196",
+          "title": "Pop‑up:\n  “Your visit trends are computed with differential privacy so Google can’t\n  identify you.” Provides learn‑more link.",
+          "use_case": "Personal\n  mobility insights.",
+          "description": "",
+          "why_selected": "Shows in‑app\n  DP banner with link to white paper; contextual education.",
+          "pbd_alignment": "Visibility, Proactive",
+          "nielsen_heuristics": "Match\n  between system & real world; Flexibility & efficiency"
+        },
+        {
+          "example_number": 5,
+          "company": "Windows\n  11 - Diagnostic Data Viewer",
+          "url": "https://support.microsoft.com/windows/diagnostic-data-viewer",
+          "title": "App\n  section “Aggregated counts collected with differential privacy” lists probe\n  names and “budget spent” for session.",
+          "use_case": "Desktop\n  OS telemetry transparency.",
+          "description": "",
+          "why_selected": "Surfaced\n  internal DP counters to advanced users & admins.",
+          "pbd_alignment": "Privacy\n  embedded, Transparency",
+          "nielsen_heuristics": "Visibility\n  of system status; User control & freedom"
+        },
+        {
+          "example_number": 6,
+          "company": "Banner",
+          "url": "https://commonvoice.mozilla.org/en/privacy",
+          "title": "States\n  clips stored with “voice privacy budget” limiting per‑speaker\n  exposure; displays remaining minutes after login.",
+          "use_case": "Crowd‑source\n  speech dataset.",
+          "description": "",
+          "why_selected": "Community\n  project openly tracks individual budget, educates contributors.",
+          "pbd_alignment": "Respect\n  for user privacy, Positive‑sum",
+          "nielsen_heuristics": "Error\n  prevention; Recognition rather than recall"
+        }
+      ]
+    },
+    {
+      "pattern_number": 26,
+      "pattern_name": "Data‑Retention",
+      "description": "",
+      "examples": [
+        {
+          "example_number": 1,
+          "company": "Delete Controls",
+          "url": "https://myactivity.google.com",
+          "title": "Users\n  choose auto‑delete period (3, 18, 36 months) per data type; status chips show\n  “Auto‑delete ON”.",
+          "use_case": "Search,\n  Location, YouTube history retention.",
+          "description": "",
+          "why_selected": "Industry\n  benchmark for user‑configurable retention schedules with clear UI.",
+          "pbd_alignment": "Proactive, Visibility\n  & transparency",
+          "nielsen_heuristics": "User\n  control & freedom; Recognition rather than recall"
+        },
+        {
+          "example_number": 2,
+          "company": "WhatsApp -\n  Default Disappearing Messages",
+          "url": "https://faq.whatsapp.com/400867173838012",
+          "title": "Global\n  setting sets new chats to delete after 24 h, 7 d, 90 d; banner reminds\n  participants.",
+          "use_case": "Personal\n  messaging minimisation.",
+          "description": "",
+          "why_selected": "Normalises\n  auto‑deletion defaults and informs chat participants.",
+          "pbd_alignment": "Privacy\n  as default, Positive‑sum",
+          "nielsen_heuristics": "Error\n  prevention; Visibility of system status"
+        },
+        {
+          "example_number": 3,
+          "company": "Snapchat",
+          "url": "https://support.snapchat.com/a/delete-chat-messages",
+          "title": "Per‑conversation\n  option; toggle slider in chat settings; info blurb.",
+          "use_case": "Ephemeral\n  social messaging.",
+          "description": "",
+          "why_selected": "Early\n  pioneer of default ephemerality with user override.",
+          "pbd_alignment": "Proactive, Respect\n  for user privacy",
+          "nielsen_heuristics": "Aesthetic\n  & minimalist design; Consistency & standards"
+        },
+        {
+          "example_number": 4,
+          "company": "Delete Timer",
+          "url": "https://telegram.org/blog/autodelete",
+          "title": "Clock\n  icon lets users set self‑destruct (1 d, 1 wk,\n  custom); animated countdown bubbles.",
+          "use_case": "Secure\n  chats needing timed deletion.",
+          "description": "",
+          "why_selected": "Fine‑grained\n  custom timers and visual cues.",
+          "pbd_alignment": "End‑to‑End\n  security, Proactive",
+          "nielsen_heuristics": "Match\n  between system & real world; Flexibility & efficiency"
+        },
+        {
+          "example_number": 6,
+          "company": "Proton",
+          "url": "https://proton.me/support/self-destructing-emails",
+          "title": "Compose\n  window checkbox sets expiration (hours to days); recipient receives expiry\n  banner.",
+          "use_case": "Secure\n  email requiring limited-lifetime content.",
+          "description": "",
+          "why_selected": "Applies\n  retention to recipient side and communicates expiry clearly.",
+          "pbd_alignment": "End‑to‑End\n  security, Visibility",
+          "nielsen_heuristics": "Help\n  users recognize, diagnose, recover; Aesthetic & minimalist design"
+        }
+      ]
+    },
+    {
+      "pattern_number": 27,
+      "pattern_name": "Data‑Retention",
+      "description": "",
+      "examples": [
+        {
+          "example_number": 1,
+          "company": "Google",
+          "url": "https://myactivity.google.com",
+          "title": "Users\n  choose auto‑delete period (3, 18, 36 months) per data type; status chips show\n  “Auto‑delete ON”.",
+          "use_case": "Search,\n  Location, YouTube history retention.",
+          "description": "",
+          "why_selected": "Industry\n  benchmark for user‑configurable retention schedules with clear UI.",
+          "pbd_alignment": "Proactive, Visibility\n  & transparency",
+          "nielsen_heuristics": "User\n  control & freedom; Recognition rather than recall"
+        },
+        {
+          "example_number": 2,
+          "company": "WhatsApp",
+          "url": "https://faq.whatsapp.com/400867173838012",
+          "title": "Global\n  setting sets new chats to delete after 24 h, 7 d, 90 d; banner reminds\n  participants.",
+          "use_case": "Personal\n  messaging minimisation.",
+          "description": "",
+          "why_selected": "Normalises\n  auto‑deletion defaults and informs chat participants.",
+          "pbd_alignment": "Privacy\n  as default, Positive‑sum",
+          "nielsen_heuristics": "Error\n  prevention; Visibility of system status"
+        },
+        {
+          "example_number": 3,
+          "company": "Snapchat",
+          "url": "https://support.snapchat.com/a/delete-chat-messages",
+          "title": "Per‑conversation\n  option; toggle slider in chat settings; info blurb.",
+          "use_case": "Ephemeral\n  social messaging.",
+          "description": "",
+          "why_selected": "Early\n  pioneer of default ephemerality with user override.",
+          "pbd_alignment": "Proactive, Respect\n  for user privacy",
+          "nielsen_heuristics": "Aesthetic\n  & minimalist design; Consistency & standards"
+        },
+        {
+          "example_number": 4,
+          "company": "Delete Timer",
+          "url": "https://telegram.org/blog/autodelete",
+          "title": "Clock\n  icon lets users set self‑destruct (1 d, 1 wk,\n  custom); animated countdown bubbles.",
+          "use_case": "Secure\n  chats needing timed deletion.",
+          "description": "",
+          "why_selected": "Fine‑grained\n  custom timers and visual cues.",
+          "pbd_alignment": "End‑to‑End\n  security, Proactive",
+          "nielsen_heuristics": "Match between\n  system & real world; Flexibility & efficiency"
+        },
+        {
+          "example_number": 6,
+          "company": "Proton",
+          "url": "https://proton.me/support/self-destructing-emails",
+          "title": "Compose\n  window checkbox sets expiration (hours to days); recipient receives expiry\n  banner.",
+          "use_case": "Secure\n  email requiring limited-lifetime content.",
+          "description": "",
+          "why_selected": "Applies\n  retention to recipient side and communicates expiry clearly.",
+          "pbd_alignment": "End‑to‑End\n  security, Visibility",
+          "nielsen_heuristics": "Help\n  users recognize, diagnose, recover; Aesthetic & minimalist design"
+        }
+      ]
+    },
+    {
+      "pattern_number": 28,
+      "pattern_name": "Data‑Retention",
+      "description": "",
+      "examples": [
+        {
+          "example_number": 1,
+          "company": "Delete Controls",
+          "url": "https://myactivity.google.com",
+          "title": "Users\n  choose auto‑delete period (3, 18, 36 months) per data type; status chips show\n  “Auto‑delete ON”.",
+          "use_case": "Search,\n  Location, YouTube history retention.",
+          "description": "",
+          "why_selected": "Industry\n  benchmark for user‑configurable retention schedules with clear UI.",
+          "pbd_alignment": "Proactive, Visibility\n  & transparency",
+          "nielsen_heuristics": "User\n  control & freedom; Recognition rather than recall"
+        },
+        {
+          "example_number": 2,
+          "company": "Default Disappearing Messages",
+          "url": "https://faq.whatsapp.com/400867173838012",
+          "title": "Global\n  setting sets new chats to delete after 24 h, 7 d, 90 d; banner reminds\n  participants.",
+          "use_case": "Personal\n  messaging minimisation.",
+          "description": "",
+          "why_selected": "Normalises\n  auto‑deletion defaults and informs chat participants.",
+          "pbd_alignment": "Privacy\n  as default, Positive‑sum",
+          "nielsen_heuristics": "Error prevention; Visibility\n  of system status"
+        },
+        {
+          "example_number": 3,
+          "company": "Snapchat",
+          "url": "https://support.snapchat.com/a/delete-chat-messages",
+          "title": "Per‑conversation\n  option; toggle slider in chat settings; info blurb.",
+          "use_case": "Ephemeral\n  social messaging.",
+          "description": "",
+          "why_selected": "Early\n  pioneer of default ephemerality with user override.",
+          "pbd_alignment": "Proactive, Respect\n  for user privacy",
+          "nielsen_heuristics": "Aesthetic\n  & minimalist design; Consistency & standards"
+        },
+        {
+          "example_number": 4,
+          "company": "Delete Timer",
+          "url": "https://telegram.org/blog/autodelete",
+          "title": "Clock\n  icon lets users set self‑destruct (1 d, 1 wk,\n  custom); animated countdown bubbles.",
+          "use_case": "Secure\n  chats needing timed deletion.",
+          "description": "",
+          "why_selected": "Fine‑grained\n  custom timers and visual cues.",
+          "pbd_alignment": "End‑to‑End\n  security, Proactive",
+          "nielsen_heuristics": "Match between\n  system & real world; Flexibility & efficiency"
+        },
+        {
+          "example_number": 6,
+          "company": "Proton",
+          "url": "https://proton.me/support/self-destructing-emails",
+          "title": "Compose\n  window checkbox sets expiration (hours to days); recipient receives expiry\n  banner.",
+          "use_case": "Secure\n  email requiring limited-lifetime content.",
+          "description": "",
+          "why_selected": "Applies\n  retention to recipient side and communicates expiry clearly.",
+          "pbd_alignment": "End‑to‑End\n  security, Visibility",
+          "nielsen_heuristics": "Help\n  users recognize, diagnose, recover; Aesthetic & minimalist design"
+        }
+      ]
+    },
+    {
+      "pattern_number": 29,
+      "pattern_name": "Data‑Retention",
+      "description": "",
+      "examples": [
+        {
+          "example_number": 1,
+          "company": "Delete Controls",
+          "url": "https://myactivity.google.com",
+          "title": "Users\n  choose auto‑delete period (3, 18, 36 months) per data type; status chips show\n  “Auto‑delete ON”.",
+          "use_case": "Search,\n  Location, YouTube history retention.",
+          "description": "",
+          "why_selected": "Industry\n  benchmark for user‑configurable retention schedules with clear UI.",
+          "pbd_alignment": "Proactive, Visibility\n  & transparency",
+          "nielsen_heuristics": "User\n  control & freedom; Recognition rather than recall"
+        },
+        {
+          "example_number": 2,
+          "company": "WhatsApp -\n  Default Disappearing Messages",
+          "url": "https://faq.whatsapp.com/400867173838012",
+          "title": "Global\n  setting sets new chats to delete after 24 h, 7 d, 90 d; banner reminds\n  participants.",
+          "use_case": "Personal\n  messaging minimisation.",
+          "description": "",
+          "why_selected": "Normalises\n  auto‑deletion defaults and informs chat participants.",
+          "pbd_alignment": "Privacy\n  as default, Positive‑sum",
+          "nielsen_heuristics": "Error\n  prevention; Visibility of system status"
+        },
+        {
+          "example_number": 3,
+          "company": "Snapchat",
+          "url": "https://support.snapchat.com/a/delete-chat-messages",
+          "title": "Per‑conversation\n  option; toggle slider in chat settings; info blurb.",
+          "use_case": "Ephemeral\n  social messaging.",
+          "description": "",
+          "why_selected": "Early\n  pioneer of default ephemerality with user override.",
+          "pbd_alignment": "Proactive, Respect\n  for user privacy",
+          "nielsen_heuristics": "Aesthetic\n  & minimalist design; Consistency & standards"
+        },
+        {
+          "example_number": 4,
+          "company": "Delete Timer",
+          "url": "https://telegram.org/blog/autodelete",
+          "title": "Clock\n  icon lets users set self‑destruct (1 d, 1 wk,\n  custom); animated countdown bubbles.",
+          "use_case": "Secure\n  chats needing timed deletion.",
+          "description": "",
+          "why_selected": "Fine‑grained\n  custom timers and visual cues.",
+          "pbd_alignment": "End‑to‑End\n  security, Proactive",
+          "nielsen_heuristics": "Match\n  between system & real world; Flexibility & efficiency"
+        },
+        {
+          "example_number": 6,
+          "company": "Proton",
+          "url": "https://proton.me/support/self-destructing-emails",
+          "title": "Compose\n  window checkbox sets expiration (hours to days); recipient receives expiry\n  banner.",
+          "use_case": "Secure\n  email requiring limited-lifetime content.",
+          "description": "",
+          "why_selected": "Applies\n  retention to recipient side and communicates expiry clearly.",
+          "pbd_alignment": "End‑to‑End\n  security, Visibility",
+          "nielsen_heuristics": "Help\n  users recognize, diagnose, recover; Aesthetic & minimalist design"
+        }
+      ]
+    }
+  ]
+}

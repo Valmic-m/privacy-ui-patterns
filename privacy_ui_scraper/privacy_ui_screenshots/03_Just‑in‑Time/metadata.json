@@ -1,0 +1,82 @@
+{
+  "pattern_number": 3,
+  "pattern_name": "Just‑in‑Time",
+  "folder": "03_Just‑in‑Time",
+  "examples": [
+    {
+      "example_number": 1,
+      "company": "iOS",
+      "url": "https://developer.apple.com/design/human-interface-guidelines/location/",
+      "title": "System\n  modal appears the moment an app first calls CoreLocation.\n  Offers “Allow Once”, “Allow While Using App”, “Don’t Allow”, plus map\n  preview.",
+      "use_case": "Mobile\n  apps requesting fine‑grained or approximate GPS data.",
+      "description": "",
+      "why_selected": "Gold‑standard\n  OS‑level just‑in‑time prompt with granular and time‑bounded choices.",
+      "pbd_alignment": "Proactive, Privacy\n  as default, End‑to‑End security",
+      "nielsen_heuristics": "User\n  control & freedom; Visibility of system status",
+      "screenshot_file": "example_1_iOS.png",
+      "timestamp": "2025-06-05T10:17:52.166584",
+      "success": true,
+      "error": null
+    },
+    {
+      "example_number": 2,
+      "company": "Android 14\n  Runtime Permissions",
+      "url": "https://developer.android.com/training/permissions/requesting",
+      "title": "Full‑screen\n  dialog triggered only on first sensitive API call; “Allow only while using”,\n  “Ask every time”, “Don’t allow”.",
+      "use_case": "Android\n  apps requesting camera, microphone, storage, etc.",
+      "description": "",
+      "why_selected": "Illustrates\n  contextual consent deferred until feature use, reducing habituation.",
+      "pbd_alignment": "Privacy\n  embedded, Respect for user privacy",
+      "nielsen_heuristics": "Recognition\n  rather than recall; Minimalist design",
+      "screenshot_file": "example_2_Android 14\n__Runtime_Permissions.png",
+      "timestamp": "2025-06-05T10:17:54.170270",
+      "success": true,
+      "error": null
+    },
+    {
+      "example_number": 3,
+      "company": "Microphone Access Prompt",
+      "url": "https://support.google.com/chrome/answer/2693767",
+      "title": "URL‑bar\n  chip with mini‑icon and dropdown (“Allow / Block”) triggered when a web app\n  calls getUserMedia().",
+      "use_case": "Web apps\n  seeking mic input (e.g., video conferencing).",
+      "description": "",
+      "why_selected": "Lightweight,\n  non‑modal banner respects browsing flow while ensuring explicit consent.",
+      "pbd_alignment": "Visibility, Full\n  functionality",
+      "nielsen_heuristics": "Consistency\n  & standards; Aesthetic design",
+      "screenshot_file": "example_3_Microphone_Access_Prompt.png",
+      "timestamp": "2025-06-05T10:17:56.175022",
+      "success": true,
+      "error": null
+    },
+    {
+      "example_number": 4,
+      "company": "Instagram",
+      "url": "https://help.instagram.com/179492815746317/",
+      "title": "OS‑integrated\n  prompt appears when user taps “Discover People”; offers continue without\n  contacts.",
+      "use_case": "Social\n  networking apps encouraging friend discovery while respecting privacy.",
+      "description": "",
+      "why_selected": "Good\n  example of app‑triggered, feature‑gated data request.",
+      "pbd_alignment": "Proactive, Positive‑sum",
+      "nielsen_heuristics": "Match\n  between system & real world",
+      "screenshot_file": "example_4_Instagram.png",
+      "timestamp": "2025-06-05T10:17:58.179760",
+      "success": true,
+      "error": null
+    },
+    {
+      "example_number": 5,
+      "company": "Location Access Prompt",
+      "url": "https://support.mozilla.org/en-US/kb/how-firefox-uses-geolocation",
+      "title": "Browser‑level\n  infobar with “Share Location / Don’t Share / Always\n  Share” plus site‑info icon to revoke later.",
+      "use_case": "Privacy‑centric\n  browser reinforcing transparency for websites.",
+      "description": "",
+      "why_selected": "Showcases\n  revocable, per‑site decision history aligning with user expectations.",
+      "pbd_alignment": "Visibility\n  & transparency, Respect for user privacy",
+      "nielsen_heuristics": "Help\n  users recognize, diagnose, recover",
+      "screenshot_file": "example_5_Location_Access_Prompt.png",
+      "timestamp": "2025-06-05T10:19:18.579340",
+      "success": true,
+      "error": null
+    }
+  ]
+}
