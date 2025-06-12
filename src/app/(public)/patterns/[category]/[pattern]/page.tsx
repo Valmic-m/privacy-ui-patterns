@@ -1,9 +1,7 @@
 'use client';
 
-import { use, useState } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePattern } from '@/hooks/usePattern';
 import { usePatterns } from '@/hooks/usePatterns';
 import { AlertCircle, ArrowLeft, ExternalLink, Shield, Eye, BookOpen, Users } from 'lucide-react';
@@ -13,6 +11,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Skeleton } from '@/components/ui/skeleton';
+import { ExampleScreenshot } from '@/components/patterns/example-screenshot';
 
 interface PageParams {
   category: string;
@@ -23,7 +22,6 @@ export default function PatternDetailPage() {
   const params = useParams();
   const categorySlug = params?.category as string;
   const patternSlug = params?.pattern as string;
-  const [selectedExample, setSelectedExample] = useState<string | null>(null);
   
   // First get patterns to find the pattern ID by slug
   const { data: patternsResponse } = usePatterns();
@@ -246,73 +244,64 @@ export default function PatternDetailPage() {
         
         <TabsContent value="examples" className="space-y-6">
           {pattern.examples && pattern.examples.length > 0 ? (
-            <div className="grid gap-6">
-              {pattern.examples.map((example) => (
-                <Card key={example.id} className="overflow-hidden">
-                  <CardHeader>
-                    <div className="flex items-start justify-between">
-                      <div>
-                        <CardTitle className="text-xl">{example.company}</CardTitle>
-                        <CardDescription className="mt-2">
-                          {example.title}
-                        </CardDescription>
-                      </div>
-                      <a 
-                        href={example.source_url} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-privacy-blue hover:text-privacy-purple transition-colors"
-                      >
-                        <ExternalLink className="w-5 h-5" />
-                      </a>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div>
-                      <h4 className="font-medium mb-2">Use Case</h4>
-                      <p className="text-muted-foreground">{example.use_case}</p>
-                    </div>
-                    
-                    {example.description && (
-                      <div>
-                        <h4 className="font-medium mb-2">Description</h4>
-                        <p className="text-muted-foreground">{example.description}</p>
-                      </div>
-                    )}
-                    
-                    <div>
-                      <h4 className="font-medium mb-2">Why This Example?</h4>
-                      <p className="text-muted-foreground">{example.why_selected}</p>
-                    </div>
-                    
-                    {example.screenshot_url && (
-                      <div className="pt-4">
-                        <Button 
-                          variant="outline" 
-                          className="w-full"
-                          onClick={() => setSelectedExample(
-                            selectedExample === example.id ? null : example.id
-                          )}
-                        >
-                          {selectedExample === example.id ? 'Hide' : 'View'} Screenshot
-                        </Button>
-                        
-                        {selectedExample === example.id && (
-                          <div className="mt-4 rounded-lg overflow-hidden border">
-                            <div className="relative aspect-video bg-muted">
-                              {/* In production, this would load the actual screenshot */}
-                              <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
-                                Screenshot: {example.screenshot_url}
-                              </div>
-                            </div>
-                          </div>
+            <>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {pattern.examples.map((example) => (
+                  <ExampleScreenshot
+                    key={example.id}
+                    screenshot_url={example.screenshot_url}
+                    alt={`${example.company} - ${example.title}`}
+                    company={example.company}
+                    source_url={example.source_url}
+                  />
+                ))}
+              </div>
+              
+              <div className="grid gap-6 mt-8">
+                {pattern.examples.map((example) => (
+                  <Card key={example.id} className="overflow-hidden">
+                    <CardHeader>
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <CardTitle className="text-xl">{example.company}</CardTitle>
+                          <CardDescription className="mt-2">
+                            {example.title}
+                          </CardDescription>
+                        </div>
+                        {example.source_url && (
+                          <a 
+                            href={example.source_url} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-privacy-blue hover:text-privacy-purple transition-colors"
+                          >
+                            <ExternalLink className="w-5 h-5" />
+                          </a>
                         )}
                       </div>
-                    )}
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      <div>
+                        <h4 className="font-medium mb-2">Use Case</h4>
+                        <p className="text-muted-foreground">{example.use_case}</p>
+                      </div>
+                      
+                      {example.description && (
+                        <div>
+                          <h4 className="font-medium mb-2">Description</h4>
+                          <p className="text-muted-foreground">{example.description}</p>
+                        </div>
+                      )}
+                      
+                      <div>
+                        <h4 className="font-medium mb-2">Why This Example?</h4>
+                        <p className="text-muted-foreground">{example.why_selected}</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </>
           ) : (
             <Card>
               <CardContent className="text-center py-12">

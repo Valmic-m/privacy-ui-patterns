@@ -41,6 +41,14 @@ I've completed the following components for your Stage 1 MVP:
 6. **Import Scripts**
    - `scripts/import-patterns.ts` - Import data from scraper
    - `scripts/seed-test-data.ts` - Seed test data for development
+   - `scripts/copy-screenshots.ts` - Copy images from scraper to public
+   - `scripts/fix-screenshot-urls.ts` - Fix URL encoding mismatches
+
+7. **Screenshot Display System**
+   - Responsive grid layout for visual examples
+   - Next.js Image optimization with lazy loading
+   - Error handling for missing images
+   - 114+ real-world example screenshots
 
 ## 🚀 Next Steps to Launch
 
@@ -76,7 +84,21 @@ npm run import:patterns
 npm run seed:test
 ```
 
-### 4. Start the Development Server
+### 4. Set Up Screenshots
+
+Copy screenshot images and fix URL encoding:
+
+```bash
+npm run copy:screenshots      # Copy 114+ images from scraper
+npm run fix:screenshot-urls   # Fix database URL encoding mismatches
+```
+
+This will:
+- Copy all screenshot files from `privacy_ui_scraper/` to `public/screenshots/`
+- Create `.gitignore` to exclude images from version control
+- Fix character encoding issues between database URLs and file system
+
+### 5. Start the Development Server
 
 ```bash
 npm run dev
@@ -107,7 +129,8 @@ src/
 │   └── patterns/
 │       ├── CategoryCard.tsx
 │       ├── PatternCard.tsx
-│       └── PatternGrid.tsx
+│       ├── PatternGrid.tsx
+│       └── example-screenshot.tsx          # Screenshot display component
 └── hooks/
     ├── useCategories.ts
     ├── usePatterns.ts
@@ -118,6 +141,7 @@ src/
 
 - **Privacy Guardian Design System** with glassmorphism effects
 - **Responsive grid layouts** for patterns and categories
+- **Screenshot display system** with Next.js Image optimization
 - **Real-time search** with debouncing
 - **Loading skeletons** for better UX
 - **Error boundaries** and error states
@@ -137,6 +161,12 @@ src/
 - Then run either the import script or seed script
 - Check the browser console for API errors
 
+### Screenshots Not Loading
+- Run `npm run copy:screenshots` to copy images from scraper
+- Run `npm run fix:screenshot-urls` to fix URL encoding issues
+- Verify that `public/screenshots/` directory exists and contains images
+- Check browser network tab for 404 errors on image requests
+
 ### Build Errors
 ```bash
 npm run type-check  # Check for TypeScript errors
@@ -150,6 +180,9 @@ npm run lint        # Check for linting issues
 - [ ] Patterns display in category page
 - [ ] Can view pattern details
 - [ ] Examples gallery works
+- [ ] Screenshots display in examples tab
+- [ ] Screenshot grid is responsive
+- [ ] Error states show for missing images
 - [ ] Search returns results
 - [ ] Mobile responsive
 - [ ] Loading states appear

@@ -11,7 +11,10 @@
     "db:migrate": "echo 'Run migrations in Supabase SQL editor'",
     "db:seed": "echo 'Run seed data in Supabase SQL editor'",
     "import:patterns": "tsx scripts/import-patterns.ts",
-    "seed:test": "tsx scripts/seed-test-data.ts"
+    "seed:test": "tsx scripts/seed-test-data.ts",
+    "copy:screenshots": "tsx scripts/copy-screenshots.ts",
+    "fix:screenshot-urls": "tsx scripts/fix-screenshot-urls.ts",
+    "setup:screenshots": "npm run copy:screenshots"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.10",

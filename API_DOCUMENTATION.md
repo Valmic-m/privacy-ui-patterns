@@ -4,6 +4,13 @@
 
 The Privacy UI Pattern Library provides a RESTful API for accessing privacy patterns, categories, and examples. All endpoints return JSON responses and support standard HTTP status codes.
 
+### Screenshot System
+
+Example objects include `screenshot_url` fields that reference images in `/public/screenshots/`. The system includes:
+- 114+ optimized images copied from the scraper directory
+- Intelligent URL matching to handle character encoding differences
+- Next.js Image optimization with lazy loading and error handling
+
 ## Base URL
 
 ```

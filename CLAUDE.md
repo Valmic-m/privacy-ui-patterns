@@ -6,10 +6,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a Privacy-UI Pattern Library - a Next.js web application providing a comprehensive collection of privacy-focused UI patterns for GDPR/CCPA compliance. 
 
-### Current Status (2025-01-10)
+### Current Status (2025-01-12)
 - **Stage 1 MVP**: ✅ Complete
-- **Live Features**: Pattern browsing, direct navigation, real-time search, data import
+- **Live Features**: Pattern browsing, direct navigation, real-time search, data import, screenshot display
 - **Database**: Supabase with 16 categories, multiple patterns, 149+ real-world examples
+- **Screenshot System**: 114+ optimized images with intelligent URL matching
 - **Tech Stack**: Next.js 15, TypeScript, React Query, Tailwind CSS, shadcn/ui
 
 The repository consists of:
@@ -34,6 +35,10 @@ cp .env.local.example .env.local  # Then add your Supabase credentials
 # Import pattern data
 npm run import:patterns    # Import from scraper data
 npm run seed:test         # OR use test data
+
+# Set up screenshots
+npm run copy:screenshots   # Copy images from scraper to public/
+npm run fix:screenshot-urls # Fix database URL encoding mismatches
 
 # Start development server
 npm run dev              # Visit http://localhost:3000
@@ -75,6 +80,7 @@ src/app/
 **Key Components**
 - **Direct Navigation**: Category cards link directly to pattern pages
 - **Pattern Pages**: Three-tab structure (Explanation, Examples, Templates)
+- **Screenshot Display**: Responsive grid with Next.js Image optimization
 - **Search**: Real-time search with debouncing in navigation
 - **Loading States**: Skeleton screens maintain layout during data fetching
 
@@ -137,9 +143,16 @@ patterns (1) → (many) templates
 - Pattern data lives in `privacy_ui_scraper/privacy_ui_screenshots/`
 - Import script maps folder names to category slugs
 - Handles duplicate detection and resume capability
-- Preserves screenshot paths for future asset serving
+- Screenshots copied to `public/screenshots/` and excluded from git
 
-## Stage 1 MVP Completion (2025-01-10)
+### Screenshot System (2025-01-12)
+- **Asset Management**: 114+ screenshots copied to public directory
+- **URL Matching**: Intelligent algorithm handles character encoding mismatches
+- **Performance**: Next.js Image optimization with lazy loading
+- **Error Handling**: Graceful fallbacks for missing images
+- **Responsive Design**: Grid layout adapts to screen size
+
+## Stage 1 MVP Completion (2025-01-12)
 
 ### What Was Built
 1. **Complete Pattern Browsing System**
@@ -147,6 +160,7 @@ patterns (1) → (many) templates
    - Direct navigation to pattern details
    - Three-tab pattern pages (Explanation, Examples, Templates)
    - Real-time search across patterns and examples
+   - Visual example screenshots in responsive grid
 
 2. **Comprehensive API Layer**
    - RESTful endpoints for all data operations
@@ -158,12 +172,14 @@ patterns (1) → (many) templates
    - Scripts to import from scraper data
    - Test data seeding for development
    - Duplicate detection and resume capability
+   - Screenshot asset management with URL correction
 
 4. **Performance & UX**
    - React Query for efficient caching
    - Loading skeletons maintain layout
    - Responsive design with glassmorphism
    - Direct navigation reduces clicks
+   - Optimized image loading with error handling
 
 ### Key Technical Decisions
 - **Next.js 15 App Router**: For modern React patterns and performance
@@ -210,6 +226,12 @@ patterns (1) → (many) templates
    - Check for React Query errors in console
    - Ensure debounce is not too long (300ms default)
 
+5. **Screenshots Not Loading**
+   - Run `npm run copy:screenshots` to copy images from scraper
+   - Run `npm run fix:screenshot-urls` to fix URL encoding issues
+   - Check that `public/screenshots/` directory exists
+   - Verify screenshot URLs in database match actual file paths
+
 ### Development Tips
 
 - Use `npm run dev` with Turbopack for faster refresh
@@ -219,4 +241,4 @@ patterns (1) → (many) templates
 
 ## Summary
 
-This CLAUDE.md documents the Privacy UI Pattern Library web application, which has successfully completed Stage 1 MVP with pattern browsing, direct navigation, and search functionality. The app is built with modern Next.js patterns and is ready for Stage 2 community features.
+This CLAUDE.md documents the Privacy UI Pattern Library web application, which has successfully completed Stage 1 MVP with pattern browsing, direct navigation, search functionality, and visual screenshot display. The app is built with modern Next.js patterns and is ready for Stage 2 community features.

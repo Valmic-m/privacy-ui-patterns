@@ -8,6 +8,7 @@ An open-source platform providing designers with a curated collection of privacy
 - ✅ Direct navigation from categories to patterns
 - ✅ Real-time search functionality
 - ✅ 149+ real-world examples from major platforms
+- ✅ Visual screenshot display with responsive grid layout
 - ✅ Comprehensive API and data layer
 - ✅ Privacy Guardian design system
 
@@ -17,6 +18,7 @@ This Next.js application serves as a comprehensive resource for privacy-consciou
 
 - 🛡️ **16 Privacy Pattern Categories** - Covering GDPR/CCPA compliance needs
 - 🌍 **149+ Real-World Examples** - Screenshots from BBC, Apple, Google, Meta, and more
+- 🖼️ **Visual Example Gallery** - Optimized screenshot display with responsive grid
 - 📚 **Academic Foundation** - Based on Privacy by Design principles and Nielsen's Heuristics
 - 🔍 **Smart Search** - Real-time search across patterns and examples
 - 🎯 **Direct Navigation** - Streamlined access to pattern information
@@ -87,7 +89,16 @@ npm run import:patterns
 npm run seed:test
 ```
 
-7. Start the development server:
+7. Set up screenshots:
+```bash
+# Copy 114+ screenshot images from scraper
+npm run copy:screenshots
+
+# Fix database URL encoding mismatches
+npm run fix:screenshot-urls
+```
+
+8. Start the development server:
 ```bash
 npm run dev
 ```
@@ -134,7 +145,9 @@ privacy-ui-patterns/
 │   └── types/                 # TypeScript definitions
 ├── scripts/
 │   ├── import-patterns.ts     # Import scraper data
-│   └── seed-test-data.ts      # Seed test patterns
+│   ├── seed-test-data.ts      # Seed test patterns
+│   ├── copy-screenshots.ts    # Copy images from scraper
+│   └── fix-screenshot-urls.ts # Fix URL encoding issues
 ├── supabase/
 │   └── migrations/            # Database schema
 ├── privacy_ui_scraper/        # Pattern data & screenshots
@@ -149,6 +162,9 @@ Click any category card to go directly to its main pattern page, eliminating unn
 ### 🔍 Real-Time Search
 Search across all patterns and examples instantly from the navigation bar.
 
+### 🖼️ Visual Example Gallery
+Responsive screenshot grid with Next.js Image optimization, lazy loading, and error handling for missing images.
+
 ### 📱 Responsive Design
 Privacy Guardian design system with glassmorphism effects, optimized for all devices.
 
@@ -157,6 +173,7 @@ Privacy Guardian design system with glassmorphism effects, optimized for all dev
 - Next.js App Router with streaming
 - Turbopack for fast development
 - Optimized API routes
+- Image optimization with lazy loading
 
 ## API Routes
 
@@ -179,8 +196,12 @@ npm run type-check   # Run TypeScript type checking
 npm run lint         # Run ESLint
 
 # Data management
-npm run import:patterns  # Import pattern data from scraper
-npm run seed:test       # Seed test data for development
+npm run import:patterns     # Import pattern data from scraper
+npm run seed:test          # Seed test data for development
+
+# Screenshot management
+npm run copy:screenshots   # Copy images from scraper to public/
+npm run fix:screenshot-urls # Fix database URL encoding issues
 ```
 
 ## Contributing
