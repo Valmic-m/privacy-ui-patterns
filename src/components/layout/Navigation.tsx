@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { 
@@ -26,6 +26,8 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
+import { useSearch } from '@/hooks/useSearch';
+import { SearchResults } from './SearchResults';
 
 const navigation = [
   { name: 'Patterns', href: '/patterns' },
@@ -36,18 +38,42 @@ const navigation = [
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [showSearchResults, setShowSearchResults] = useState(false);
   const pathname = usePathname();
+  const searchRef = useRef<HTMLDivElement>(null);
 
   // Mock user state - replace with actual auth logic
   const user = null; // This would come from your auth context/hook
   const isAdmin = false; // This would come from your auth context/hook
 
+  // Use the search hook
+  const { data: searchResponse } = useSearch(searchQuery);
+  const searchResults = searchResponse?.data || { patterns: [], examples: [] };
+
+  // Close search results when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+        setShowSearchResults(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  // Show search results when typing
+  useEffect(() => {
+    if (searchQuery.length >= 2) {
+      setShowSearchResults(true);
+    } else {
+      setShowSearchResults(false);
+    }
+  }, [searchQuery]);
+
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    if (searchQuery.trim()) {
-      // Navigate to search results
-      window.location.href = `/patterns?q=${encodeURIComponent(searchQuery)}`;
-    }
+    // The search is already handled by the useSearch hook
   };
 
   return (
@@ -83,7 +109,7 @@ export function Navigation() {
         </div>
 
         {/* Search Bar */}
-        <div className="flex-1 mx-6">
+        <div className="flex-1 mx-6" ref={searchRef}>
           <form onSubmit={handleSearch} className="relative max-w-md mx-auto">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
@@ -93,6 +119,15 @@ export function Navigation() {
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-10 pr-4 w-full"
             />
+            {showSearchResults && searchQuery.length >= 2 && (
+              <SearchResults 
+                results={searchResults} 
+                onClose={() => {
+                  setShowSearchResults(false);
+                  setSearchQuery('');
+                }}
+              />
+            )}
           </form>
         </div>
 
