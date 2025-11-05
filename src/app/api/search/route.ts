@@ -21,8 +21,15 @@ export async function GET(request: Request) {
     const { data: patterns, error: patternsError } = await supabase
       .from('patterns')
       .select(`
-        *,
-        category:pattern_categories(*)
+        id,
+        title,
+        slug,
+        description,
+        category:pattern_categories(
+          id,
+          name,
+          slug
+        )
       `)
       .or(`title.ilike.%${query}%,description.ilike.%${query}%,explanation.ilike.%${query}%`)
       .limit(10);
@@ -35,10 +42,18 @@ export async function GET(request: Request) {
     const { data: examples, error: examplesError } = await supabase
       .from('examples')
       .select(`
-        *,
+        id,
+        company,
+        title,
         pattern:patterns(
-          *,
-          category:pattern_categories(*)
+          id,
+          title,
+          slug,
+          category:pattern_categories(
+            id,
+            name,
+            slug
+          )
         )
       `)
       .or(`company.ilike.%${query}%,title.ilike.%${query}%,use_case.ilike.%${query}%`)

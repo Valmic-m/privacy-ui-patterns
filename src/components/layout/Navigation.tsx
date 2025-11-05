@@ -35,6 +35,13 @@ const navigation = [
   { name: 'Contribute', href: '/contribute' },
 ];
 
+interface User {
+  id: string;
+  email: string;
+  display_name: string;
+  avatar_url?: string;
+}
+
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -43,7 +50,7 @@ export function Navigation() {
   const searchRef = useRef<HTMLDivElement>(null);
 
   // Mock user state - replace with actual auth logic
-  const user = null; // This would come from your auth context/hook
+  const user = null as User | null; // This would come from your auth context/hook
   const isAdmin = false; // This would come from your auth context/hook
 
   // Use the search hook

@@ -5,6 +5,7 @@ interface SearchResult {
   patterns: Array<{
     id: string;
     title: string;
+    slug: string;
     description: string;
     category: {
       id: string;
@@ -19,6 +20,7 @@ interface SearchResult {
     pattern: {
       id: string;
       title: string;
+      slug: string;
       category: {
         id: string;
         name: string;
